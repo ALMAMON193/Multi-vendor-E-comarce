@@ -27,11 +27,12 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
     return view('admin.index');
 })->middleware(['verified'])->name('dashboard');
 
-    Route::get('/admin/profile', [AdminProfileController::class, 'AdminProfile'])->name('profile');
-    Route::get('/profile', [AdminProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [AdminProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [AdminProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [AdminProfileController::class, 'AdminProfile'])->name('profile');
+    Route::get('/profile/edit', [AdminProfileController::class, 'adminEdit'])->name('profile.edit');
+    Route::patch('/profile/update', [AdminProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile/', [AdminProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
+
 

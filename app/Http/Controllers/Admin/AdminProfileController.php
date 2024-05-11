@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\User;
 
 class AdminProfileController extends Controller
 {
@@ -18,18 +19,20 @@ class AdminProfileController extends Controller
      */
 
 
-     public function AdminProfile(){
+     public function AdminProfile(Request $request){
         $adminData = Admin::find(1);
-        return view('admin.Adminprofile.admin_profile',compact('adminData'));
+      
+        return view('admin.adminprofile.admin_profile',compact('adminData'));
          
     }
 
     
-    public function edit(Request $request): View
+    public function adminEdit()
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        $editData = Admin::find(1);
+        dd($editData);
+        return view('admin.adminprofile.edit', ['editData' => $editData]);
+        
     }
 
     /**

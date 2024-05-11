@@ -18,6 +18,10 @@ return new class extends Migration
   $table->string('email')->unique();
   $table->string('password');
   $table->string('profile')->nullable();
+  $table->string('phone')->nullable();
+  $table->string('address')->nullable();
+  $table->string('desegregation')->nullable();
+  $table->string('city')->nullable();
   $table->rememberToken();
   $table->timestamps();
 
