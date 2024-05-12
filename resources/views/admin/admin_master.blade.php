@@ -1,96 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-bs-theme="light">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="{{ asset('backend/images/favicon.ico') }}">
-
-    <title>School Management system Dashboard</title>
-
-    <!-- Vendors Style-->
-    <link rel="stylesheet" href="{{ asset('backend/css/vendors_css.css') }}">
-
-    <!-- Style-->
-    <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('backend/css/skin_color.css') }}">
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>X-Bakery</title>
+    <link rel="icon" type="image/x-icon" href="{{asset('/favicon.ico')}}" />
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/animate.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/fontawesome.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/toastify.min.css')}}" rel="stylesheet" />
+    <script src="{{asset('js/toastify-js.js')}}"></script>
+    <script src="{{asset('js/axios.min.js')}}"></script>
+    <script src="{{asset('js/config.js')}}"></script>
 </head>
 
-<body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
+<body>
 
-    <div class="wrapper">
+<div id="loader" class="LoadingOverlay d-none">
+<div class="Line-Progress">
+    <div class="indeterminate"></div>
+</div>
+</div>
 
-        @include('admin.body.header')
+<div>
+    @yield('content')
+</div>
+<script>
 
-        <!-- Left side column. contains the logo and sidebar -->
-        @include('admin.body.sidenav')
+</script>
 
-        <!-- Content Wrapper. Contains page content -->
-        @yield('admin_content')
-        <!-- /.content-wrapper -->
-        @include('admin.body.footer')
-
-        <div class="control-sidebar-bg"></div>
-
-    </div>
-    <!-- ./wrapper -->
-
-
-    <!-- Vendor JS -->
-    <script src="{{ asset('backend/js/vendors.min.js') }}"></script>
-    <script src="{{ asset('../assets/icons/feather-icons/feather.min.js') }}"></script>
-    <script src="{{ asset('../assets/vendor_components/easypiechart/dist/jquery.easypiechart.js') }}"></script>
-    <script src="{{ asset('../assets/vendor_components/apexcharts-bundle/irregular-data-series.js') }}"></script>
-    <script src="{{ asset('../assets/vendor_components/apexcharts-bundle/dist/apexcharts.js') }}"></script>
-
-    <!--data table -->
-    <script src="{{ asset('../assets/vendor_components/datatable/datatables.min.js') }}"></script>
-    <script src="{{ asset('backend/js/pages/data-table.js') }}"></script>
-
-    <!-- Sunny Admin App -->
-    <script src="{{ asset('backend/js/template.js') }}"></script>
-    <script src="{{ asset('backend/js/pages/dashboard.js') }}"></script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-    
-
-    <!-- toastr -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-
-
-
-    <script>
-        @if (Session::has('message'))
-            var type = "{{ Session::get('alert-type', 'info') }}";
-            switch (type) {
-                case 'info':
-                    toastr.info("{{ Session::get('message') }}");
-                    break;
-
-                case 'warning':
-                    toastr.warning("{{ Session::get('message') }}");
-                    break;
-
-                case 'success':
-                    toastr.success("{{ Session::get('message') }}");
-                    break;
-
-                case 'error':
-                    toastr.error("{{ Session::get('message') }}");
-                    break;
-            }
-        @endif
-    </script>
+<script src="{{asset('js/bootstrap.bundle.js')}}"></script>
 
 </body>
-
 </html>

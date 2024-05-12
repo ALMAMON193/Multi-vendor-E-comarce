@@ -1,6 +1,5 @@
-@extends('admin.admin_master')
-
-@section('admin_content')
+@extends('admin.admin_dashboard_master')
+@section('content')
 <div class="content-wrapper">
 <div class="container-full">
 <section>
@@ -10,14 +9,16 @@
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-              class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3">John Smith</h5>
-            <p class="text-muted mb-1">Full Stack Developer</p>
-            <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+            <img src="{{ !empty($adminData->profile) ? url('upload/admin_images/'.$adminData->profile) : url('upload/admin_images/no_image.jpg'
+
+            )}}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+
+            <h6 class="my-3">{{ $adminData->name }}</h6>
+            <p class="text-muted mb-1">{{ $adminData->desegregation  }}</p>
+            <p class="text-muted mb-4">{{ $adminData->address }}</p>
             <div class="d-flex justify-content-center mb-2">
-              <button  type="button" data-mdb-button-init data-mdb-ripple-init >123K</button>
-              <button  type="button" data-mdb-button-init data-mdb-ripple-init>234K</button>
+              <button  type="button" class="btn btn-outline-primary my-2 my-sm-0 " >123K</button>
+              <button  type="button" class="btn btn-outline-primary my-2 my-sm-0" >234K</button>
             </div>
           </div>
         </div>
@@ -28,46 +29,47 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Full Name</p>
+                <h6 class="mb-0">Full Name</h6
+                  h3>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Johnatan Smith</p>
+                <p class="text-muted mb-0">{{ $adminData->name }}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Email</p>
+                <h6 class="mb-0">Email</h6>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">example@example.com</p>
+                <p class="text-muted mb-0">{{ $adminData->email }}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Phone</p>
+                <h6 class="mb-0">Phone</h6>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">(097) 234-5678</p>
+                <p class="text-muted mb-0">(088) {{ $adminData->phone }}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Mobile</p>
+                <h6 class="mb-0">City</h6>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">(098) 765-4321</p>
+                <p class="text-muted mb-0">{{ $adminData->city }}</p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Address</p>
+                <h6 class="mb-0">Address</h6>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                <p class="text-muted mb-0">{{ $adminData->address }}</p>
               </div>
             </div>
            <a href="{{ route('admin.profile.edit') }}" class="btn btn-primary mt-4">Edit profile

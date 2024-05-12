@@ -29,6 +29,7 @@ Route::middleware('auth:admin')->prefix('admin')->name('admin.')->group(function
 
     Route::get('/profile/view', [AdminProfileController::class, 'View'])->name('view.profile');
     Route::get('/profile/edit', [AdminProfileController::class, 'Edit'])->name('profile.edit');
+    Route::POST('/profile/store', [AdminProfileController::class, 'Store'])->name('profile.store');
     Route::patch('/profile/update', [AdminProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [AdminProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])

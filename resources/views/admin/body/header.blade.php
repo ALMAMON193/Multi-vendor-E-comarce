@@ -1,89 +1,31 @@
-<header class="main-header">
-  <!-- Header Navbar -->
-  <nav class="navbar navbar-static-top pl-30">
-    <!-- Sidebar toggle button-->
-  <div>
-    <ul class="nav">
-    <li class="btn-group nav-item">
-      <a href="#" class="waves-effect waves-light nav-link rounded svg-bt-icon" data-toggle="push-menu" role="button">
-        <i class="nav-link-icon mdi mdi-menu"></i>
-        </a>
-    </li>
-    <li class="btn-group nav-item">
-      <a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="Full Screen">
-        <i class="nav-link-icon mdi mdi-crop-free"></i>
-        </a>
-    </li>			
-    <li class="btn-group nav-item d-none d-xl-inline-block">
-      <a href="#" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="">
-        <i class="ti-check-box"></i>
-        </a>
-    </li>
-    <li class="btn-group nav-item d-none d-xl-inline-block">
-      <a href="calendar.html" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="">
-        <i class="ti-calendar"></i>
-        </a>
-    </li>
-    </ul>
-  </div>
-  
-    <div class="navbar-custom-menu r-side">
-      <ul class="nav navbar-nav">
-    <!-- full Screen -->
-      <li class="search-bar">		  
-      <div class="lookup lookup-circle lookup-right">
-         <input type="text" name="s">
-      </div>
-    </li>			
-    <!-- Notifications -->
-    <li class="dropdown notifications-menu">
-    <a href="#" class="waves-effect waves-light rounded dropdown-toggle" data-toggle="dropdown" title="Notifications">
-      <i class="ti-bell"></i>
-    </a>
-    <ul class="dropdown-menu animated bounceIn">
+<nav class="navbar fixed-top px-0 shadow-sm bg-white">
+    <div class="container-fluid">
 
-      <li class="header">
-      <div class="p-20">
-        <div class="flexbox">
-          <div>
-            <h4 class="mb-0 mt-0">Notifications</h4>
-          </div>
-          <div>
-            <a href="#" class="text-danger">Clear All</a>
-          </div>
+        <a class="navbar-brand" href="#">
+            <span class="icon-nav m-0 h5" onclick="MenuBarClickHandler()">
+                <img class="nav-logo-sm mx-2" src="{{ asset('images/menu.svg') }}" alt="logo" />
+            </span>
+            <img class="nav-logo  mx-2" src="{{ asset('images/logo.png') }}" alt="logo" />
+        </a>
+
+        <div class="float-right h-auto d-flex">
+            <div class="user-dropdown">
+              <img class="icon-nav-img" src="{{ !empty($adminData->profile) ? url('upload/admin_images/'.$adminData->profile) : url('upload/admin_images/no_image.jpg') }}" alt="" />
+
+                <div class="user-dropdown-content ">
+                    <div class="mt-4 text-center">
+                      <img class="icon-nav-img" src="{{ !empty($adminData->profile) ? url('upload/admin_images/'.$adminData->profile) : url('upload/admin_images/no_image.jpg') }}" alt="" />
+                        <h6>User Name</h6>
+                        <hr class="user-dropdown-divider  p-0" />
+                    </div>
+                    <a href="{{ route('admin.view.profile') }}" class="side-bar-item">
+                        <span class="side-bar-item-caption">Profile</span>
+                    </a>
+                    <a href="{{route('admin.logout')}}" class="side-bar-item">
+                        <span class="side-bar-item-caption">Logout</span>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-      </li>
-
-      <li>
-    
-      </li>
-    
-    </ul>
-    </li>	
-    
-      <!-- User Account-->
-        <li class="dropdown user user-menu">	
-    <a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
-      <img src="../images/avatar/1.jpg" alt="">
-    </a>
-    <ul class="dropdown-menu animated flipInX">
-      <li class="user-body">
-       <a class="dropdown-item" href="{{ route('admin.view.profile') }}"><i class="ti-user text-muted mr-2"></i> Profile</a>
-       <a class="dropdown-item" href="#"><i class="ti-wallet text-muted mr-2"></i> My Wallet</a>
-       <a class="dropdown-item" href="#"><i class="ti-settings text-muted mr-2"></i> Settings</a>
-       <div class="dropdown-divider"></div>
-       <a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="ti-lock text-muted mr-2"></i> Logout</a>
-      </li>
-    </ul>
-        </li>	
-    <li>
-            <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">
-        <i class="ti-settings"></i>
-      </a>
-        </li>
-    
-      </ul>
     </div>
-  </nav>
-</header>
+</nav>

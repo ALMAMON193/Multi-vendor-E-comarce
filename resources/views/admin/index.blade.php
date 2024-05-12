@@ -1,223 +1,177 @@
-@extends('admin.admin_master')
-@section('admin_content')
-<div class="content-wrapper">
-  <div class="container-full">
+@extends('admin.admin_dashboard_master')
+@section('content')
+    <div class="container-fluid">
+        <div class="row">
 
-  <!-- Main content -->
-  <section class="content">
-    <div class="row">
-      <div class="col-xl-2 col-6">
-        <div class="box overflow-hidden pull-up">
-          <div class="box-body">							
-            <div class="icon bg-primary-light rounded w-60 h-60">
-              <i class="text-primary mr-0 font-size-24 mdi mdi-account-multiple"></i>
-            </div>
-            <div>
-              <p class="text-mute mt-20 mb-0 font-size-16">New Customers</p>
-              <h3 class="text-white mb-0 font-weight-500">3400 <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small></h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-2 col-6">
-        <div class="box overflow-hidden pull-up">
-          <div class="box-body">							
-            <div class="icon bg-warning-light rounded w-60 h-60">
-              <i class="text-warning mr-0 font-size-24 mdi mdi-car"></i>
-            </div>
-            <div>
-              <p class="text-mute mt-20 mb-0 font-size-16">Sold Cars</p>
-              <h3 class="text-white mb-0 font-weight-500">3400 <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small></h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-2 col-6">
-        <div class="box overflow-hidden pull-up">
-          <div class="box-body">							
-            <div class="icon bg-info-light rounded w-60 h-60">
-              <i class="text-info mr-0 font-size-24 mdi mdi-sale"></i>
-            </div>
-            <div>
-              <p class="text-mute mt-20 mb-0 font-size-16">Sales Lost</p>
-              <h3 class="text-white mb-0 font-weight-500">$1,250 <small class="text-danger"><i class="fa fa-caret-down"></i> -0.5%</small></h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-2 col-6">
-        <div class="box overflow-hidden pull-up">
-          <div class="box-body">							
-            <div class="icon bg-danger-light rounded w-60 h-60">
-              <i class="text-danger mr-0 font-size-24 mdi mdi-phone-incoming"></i>
-            </div>
-            <div>
-              <p class="text-mute mt-20 mb-0 font-size-16">Inbound Call</p>
-              <h3 class="text-white mb-0 font-weight-500">1,460 <small class="text-danger"><i class="fa fa-caret-up"></i> -1.5%</small></h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-2 col-6">
-        <div class="box overflow-hidden pull-up">
-          <div class="box-body">							
-            <div class="icon bg-success-light rounded w-60 h-60">
-              <i class="text-success mr-0 font-size-24 mdi mdi-phone-outgoing"></i>
-            </div>
-            <div>
-              <p class="text-mute mt-20 mb-0 font-size-16">Outbound Call</p>
-              <h3 class="text-white mb-0 font-weight-500">1,700 <small class="text-success"><i class="fa fa-caret-up"></i> +0.5%</small></h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-2 col-6">
-        <div class="box overflow-hidden pull-up">
-          <div class="box-body">							
-            <div class="icon bg-light rounded w-60 h-60">
-              <i class="text-white mr-0 font-size-24 mdi mdi-chart-line"></i>
-            </div>
-            <div>
-              <p class="text-mute mt-20 mb-0 font-size-16">Total Revune</p>
-              <h3 class="text-white mb-0 font-weight-500">$4,500k <small class="text-success"><i class="fa fa-caret-up"></i> +2.5%</small></h3>
-            </div>
-          </div>
-        </div>
-      </div>
-   
-      
-      <div class="col-12">
-        <div class="box">
-          <div class="box-header">
-            <h4 class="box-title align-items-start flex-column">
-              New Arrivals
-              <small class="subtitle">More than 400+ new members</small>
-            </h4>
-          </div>
-          <div class="box-body">
-            <div class="table-responsive">
-              <table class="table no-border">
-                <thead>
-                  <tr class="text-uppercase bg-lightest">
-                    <th style="min-width: 250px"><span class="text-white">products</span></th>
-                    <th style="min-width: 100px"><span class="text-fade">pruce</span></th>
-                    <th style="min-width: 100px"><span class="text-fade">deposit</span></th>
-                    <th style="min-width: 150px"><span class="text-fade">agent</span></th>
-                    <th style="min-width: 130px"><span class="text-fade">status</span></th>
-                    <th style="min-width: 120px"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>										
-                    <td class="pl-0 py-8">
-                      <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 mr-20">
-                          <div class="bg-img h-50 w-50" style="background-image: url({{ asset('backend/images/gallery/creative/img-1.jpg') }})"></div>
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
+                <div class="card card-plain h-100 bg-white">
+                    <div class="p-3">
+                        <div class="row">
+                            <div class="col-9 col-lg-8 col-md-8 col-sm-9">
+                                <div>
+                                    <h5 class="mb-0 text-capitalize font-weight-bold">
+                                        <span id="product"></span>
+                                    </h5>
+                                    <p class="mb-0 text-sm">Product</p>
+                                </div>
+                            </div>
+                            <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
+                                <div class="icon icon-shape bg-gradient-primary shadow float-end border-radius-md">
+                                    <img class="w-100 " src="{{ asset('images/icon.svg') }}" />
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
 
-                        <div>
-                          <a href="#" class="text-white font-weight-600 hover-primary mb-1 font-size-16">Vivamus consectetur</a>
-                          <span class="text-fade d-block">Pharetra, Nulla , Nec, Aliquet</span>
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
+                <div class="card card-plain h-100 bg-white">
+                    <div class="p-3">
+                        <div class="row">
+                            <div class="col-9 col-lg-8 col-md-8 col-sm-9">
+                                <div>
+                                    <h5 class="mb-0 text-capitalize font-weight-bold">
+                                        <span id="category"></span>
+                                    </h5>
+                                    <p class="mb-0 text-sm">Category</p>
+                                </div>
+                            </div>
+                            <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
+                                <div class="icon icon-shape bg-gradient-primary shadow float-end border-radius-md">
+                                    <img class="w-100 " src="{{ asset('images/icon.svg') }}" />
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="text-fade font-weight-600 d-block font-size-16">
-                        Paid
-                      </span>
-                      <span class="text-white font-weight-600 d-block font-size-16">
-                        $45,800k
-                      </span>
-                    </td>
-                    <td>
-                      <span class="text-fade font-weight-600 d-block font-size-16">
-                        Paid
-                      </span>
-                      <span class="text-white font-weight-600 d-block font-size-16">
-                        $45k
-                      </span>
-                    </td>
-                    <td>
-                      <span class="text-fade font-weight-600 d-block font-size-16">
-                        Sophia
-                      </span>
-                      <span class="text-white font-weight-600 d-block font-size-16">
-                        Pharetra
-                      </span>
-                    </td>
-                    <td>
-                      <span class="badge badge-primary-light badge-lg">Approved</span>
-                    </td>
-                    <td class="text-right">
-                      <a href="#" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-bookmark-plus"></span></a>
-                      <a href="#" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-arrow-right"></span></a>
-                    </td>
-                  </tr>
-                  <tr>										
-                    <td class="pl-0 py-8">
-                      <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 mr-20">
-                          <div class="bg-img h-50 w-50" style="background-image: url({{ asset('backend/images/gallery/creative/img-2.jpg') }})"></div>
-                        </div>
-
-                        <div>
-                          <a href="#" class="text-white font-weight-600 hover-primary mb-1 font-size-16">Vivamus consectetur</a>
-                          <span class="text-fade d-block">Pharetra, Nulla , Nec, Aliquet</span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <span class="text-fade font-weight-600 d-block font-size-16">
-                        Paid
-                      </span>
-                      <span class="text-white font-weight-600 d-block font-size-16">
-                        $45,800k
-                      </span>
-                    </td>
-                    <td>
-                      <span class="text-fade font-weight-600 d-block font-size-16">
-                        Paid
-                      </span>
-                      <span class="text-white font-weight-600 d-block font-size-16">
-                        $45k
-                      </span>
-                    </td>
-                    <td>
-                      <span class="text-fade font-weight-600 d-block font-size-16">
-                        Sophia
-                      </span>
-                      <span class="text-white font-weight-600 d-block font-size-16">
-                        Pharetra
-                      </span>
-                    </td>
-                    <td>
-                      <span class="badge badge-warning-light badge-lg">In Progress</span>
-                    </td>
-                    <td class="text-right">
-                      <a href="#" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-bookmark-plus"></span></a>
-                      <a href="#" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-arrow-right"></span></a>
-                    </td>
-                  </tr>
-                  <tr>										
-                    <td class="pl-0 py-8">
-                      <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 mr-20">
-                          <div class="bg-img h-50 w-50" style="background-image: url(../images/gallery/creative/img-3.jpg)"></div>
-                        </div>
-
-                        
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>  
-      </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
+                <div class="card card-plain h-100 bg-white">
+                    <div class="p-3">
+                        <div class="row">
+                            <div class="col-9 col-lg-8 col-md-8 col-sm-9">
+                                <div>
+                                    <h5 class="mb-0 text-capitalize font-weight-bold">
+                                        <span id="customer"></span>
+                                    </h5>
+                                    <p class="mb-0 text-sm">Customer</p>
+                                </div>
+                            </div>
+                            <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
+                                <div class="icon icon-shape bg-gradient-primary shadow float-end border-radius-md">
+                                    <img class="w-100 " src="{{ asset('images/icon.svg') }}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
+                <div class="card card-plain h-100  bg-white">
+                    <div class="p-3">
+                        <div class="row">
+                            <div class="col-9 col-lg-8 col-md-8 col-sm-9">
+                                <div>
+                                    <h5 class="mb-0 text-capitalize font-weight-bold">
+                                        <span id="invoice"></span>
+                                    </h5>
+                                    <p class="mb-0 text-sm">Invoice</p>
+                                </div>
+                            </div>
+                            <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
+                                <div class="icon icon-shape bg-gradient-primary shadow float-end border-radius-md">
+                                    <img class="w-100 " src="{{ asset('images/icon.svg') }}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
+                <div class="card card-plain h-100 bg-white">
+                    <div class="p-3">
+                        <div class="row">
+                            <div class="col-9 col-lg-8 col-md-8 col-sm-9">
+                                <div>
+                                    <h5 class="mb-0 text-capitalize font-weight-bold">
+                                        $ <span id="total"></span>
+                                    </h5>
+                                    <p class="mb-0 text-sm">Total Sale</p>
+                                </div>
+                            </div>
+                            <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
+                                <div class="icon icon-shape bg-gradient-primary shadow float-end border-radius-md">
+                                    <img class="w-100 " src="{{ asset('images/icon.svg') }}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
+                <div class="card card-plain h-100  bg-white">
+                    <div class="p-3">
+                        <div class="row">
+                            <div class="col-9 col-lg-8 col-md-8 col-sm-9">
+                                <div>
+                                    <h5 class="mb-0 text-capitalize font-weight-bold">
+                                        $ <span id="vat"></span>
+                                    </h5>
+                                    <p class="mb-0 text-sm">Vat Collection</p>
+                                </div>
+                            </div>
+                            <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
+                                <div class="icon icon-shape bg-gradient-primary shadow float-end border-radius-md">
+                                    <img class="w-100 " src="{{ asset('images/icon.svg') }}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 animated fadeIn p-2">
+                <div class="card card-plain h-100  bg-white">
+                    <div class="p-3">
+                        <div class="row">
+                            <div class="col-9 col-lg-8 col-md-8 col-sm-9">
+                                <div>
+                                    <h5 class="mb-0 text-capitalize font-weight-bold">
+                                        $ <span id="payable"></span>
+                                    </h5>
+                                    <p class="mb-0 text-sm">Total Collection</p>
+                                </div>
+                            </div>
+                            <div class="col-3 col-lg-4 col-md-4 col-sm-3 text-end">
+                                <div class="icon icon-shape bg-gradient-primary shadow float-end border-radius-md">
+                                    <img class="w-100 " src="{{ asset('images/icon.svg') }}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                {{-- <div class="col-6">
+                    @include('components.customer.customer-list')
+                </div>
+                <div class="col-6">
+                    @include('components.product.product-list')
+                </div> --}}
+
+            </div>
+
+
+        </div>
     </div>
-  </section>
-  <!-- /.content -->
-  </div>
-</div>
+
 @endsection

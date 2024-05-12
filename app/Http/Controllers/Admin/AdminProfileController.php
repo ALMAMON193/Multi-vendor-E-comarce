@@ -17,18 +17,20 @@ class AdminProfileController extends Controller
         return view('admin.profile.edit',compact('editData'));
     }
     function Store(Request $request){
-        // return $request->all();
+       
         $data = Admin::find(1);
         $data->name = $request->name;
         $data->email = $request->email;
         $data->phone = $request->phone;
+        $data->city = $request->city;
+        $data->desegregation = $request->desegregation;
         $data->address = $request->address;
-        if($request->file('photo')){
-            $file = $request->file('photo');
-            @unlink(public_path('upload/admin_images/'.$data->photo));
+        if($request->file('profile')){
+            $file = $request->file('profile');
+            @unlink(public_path('upload/admin_images/'.$data->profile));
             $filename = date('YmdHi').$file->getClientOriginalName();
             $file->move(public_path('upload/admin_images/'),$filename);
-            $data['photo'] = $filename;
+            $data['profile'] = $filename;
         }
         $data->save();
         $notification = array(
@@ -37,4 +39,28 @@ class AdminProfileController extends Controller
         );
         return redirect()->route('admin.view.profile')->with($notification);
     }
+//     public function Update(Request $request){
+
+//         $data = Admin::find(1);
+//         $data->name = $request->name;
+//         $data->email = $request->email;
+//         $data->phone = $request->phone;
+//         $data->city = $request->city;
+//         $data->desegregation = $request->desegregation;
+//         $data->address = $request->address;
+//         if($request->file('profile')){
+//             $file = $request->file('profile');
+//             @unlink(public_path('upload/admin_images/'.$data->profile));
+//             $filename = date('YmdHi').$file->getClientOriginalName();
+//             $file->move(public_path('upload/admin_images/'),$filename);
+//             $data['profile'] = $filename;
+//         }
+//         $data->save();
+//         $notification = array(
+//             'message' => 'Profile Updated Successfully',
+//             'alert-type' => 'success'
+//         );
+//         return redirect()->route('admin.view.profile')->with($notification);
+
+//     }
 }
