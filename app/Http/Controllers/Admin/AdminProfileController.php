@@ -3,72 +3,38 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Admin;
-use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\ProfileUpdateRequest;
-use App\Models\User;
 
 class AdminProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
-
-
-     public function AdminProfile(Request $request){
+    public function View(){
         $adminData = Admin::find(1);
-      
-        return view('admin.adminprofile.admin_profile',compact('adminData'));
-         
+        return view('admin.profile.view-profile',compact('adminData'));
     }
-
-    
-    public function adminEdit()
-    {
+    function Edit(){
         $editData = Admin::find(1);
-        dd($editData);
-        return view('admin.adminprofile.edit', ['editData' => $editData]);
-        
+        return view('admin.profile.edit',compact('editData'));
     }
-
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
-    {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+    function Store(Request $request){
+        // return $request->all();
+        $data = Admin::find(1);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->address = $request->address;
+        if($request->file('photo')){
+            $file = $request->file('photo');
+            @unlink(public_path('upload/admin_images/'.$data->photo));
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/admin_images/'),$filename);
+            $data['photo'] = $filename;
         }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
-    }
-
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
-
-        $user = $request->user();
-
-        Auth::logout();
-
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
+        $data->save();
+        $notification = array(
+            'message' => 'Profile Updated Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('admin.view.profile')->with($notification);
     }
 }

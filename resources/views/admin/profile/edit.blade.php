@@ -51,7 +51,7 @@
                                             <div class="form-group">
                                                 <h5>Email <span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="email" id="email" name="email" class="form-control" required value="{{ $editData->email }}"
+                                                    <input type="email" id="email" name="email" class="form-control" required  value="{{ $editData->email }}"
                                                        >
                                                 </div>
                                             </div>
