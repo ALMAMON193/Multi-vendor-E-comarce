@@ -66,7 +66,7 @@
                     </form>
                 </div>
                 <ul class="navbar-nav attr-nav align-items-center">
-                    <li><a href="#" class="nav-link"><i class="linearicons-user"></i></a></li>
+                    <li><a href="{{ route('login') }}" class="nav-link"><i class="linearicons-user"></i></a></li>
                     <li><a href="#" class="nav-link"><i class="linearicons-heart"></i><span class="wishlist_count">0</span></a></li>
                     <li class="dropdown cart_dropdown"><a class="nav-link cart_trigger" href="#" data-bs-toggle="dropdown"><i class="linearicons-bag2"></i><span class="cart_count">2</span><span class="amount"><span class="currency_symbol">$</span>159.00</span></a>
                         <div class="cart_box cart_right dropdown-menu dropdown-menu-right">
