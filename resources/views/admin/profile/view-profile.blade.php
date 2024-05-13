@@ -18,6 +18,7 @@
             <p class="text-muted mb-4">{{ $adminData->address }}</p>
             <div class="d-flex justify-content-center mb-2">
               <button  type="button" class="btn btn-outline-primary my-2 my-sm-0 " >123K</button>
+              <span style="padding-left: 15px"></span>
               <button  type="button" class="btn btn-outline-primary my-2 my-sm-0" >234K</button>
             </div>
           </div>
