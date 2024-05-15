@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class BrandController extends Controller
 {
     public  function AllBrand(){
-        $brands = Brand::latest()->get();
+        $brands = Brand::paginate(10);
         return view('backend.brand.view-brand' , compact('brands' ));
 
     }

@@ -25,7 +25,7 @@
   <link href="{{ asset('backend/assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
   <link href="{{ asset('backend/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
   <link href="{{ asset('backend/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-  <link href="{{ asset('backend/assets/vendor/simple-datatables/style.css"') }} rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('backend/assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('backend/assets/css/style.css') }}" rel="stylesheet">
@@ -59,9 +59,9 @@
   <script src="{{ asset('backend/assets/vendor/chart.js/chart.umd.js') }}"></script>
   <script src="{{ asset('backend/assets/vendor/echarts/echarts.min.js') }}"></script>
   <script src="{{ asset('backend/assets/vendor/quill/quill.js') }}"></script>
-  <script src="{{ asset('backend/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+ <script src="{{ asset('backend/assets/js/datatables.min.js') }}"></script>
   <script src="{{ asset('backend/assets/vendor/tinymce/tinymce.min.js') }}"></script>
-  <script src="{{ asset('backend/assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('backend/assets/vendor/php-email-form/validate.js') }}"></>
 
   <!-- Template Main JS File -->
   <script src="{{ asset('backend/assets/js/main.js') }}"></script>
