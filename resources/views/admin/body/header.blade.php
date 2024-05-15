@@ -9,12 +9,6 @@
         </a>
         
 
-        <form action="#" class="navbar-search" style="display: flex; align-items: center;">
-            <input style="height: 43px; width:25rem; margin-left:60rem" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-          
-        </form>
-        
-
         <div class="float-right h-auto d-flex pt-2 " style="margin-right: 40px">
             <div class="user-dropdown">
                 
