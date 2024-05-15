@@ -1,44 +1,192 @@
-<nav class="navbar fixed-top px-0 shadow-sm bg-white">
-    <div class="container-fluid">
+<header id="header" class="header fixed-top d-flex align-items-center">
 
-        <a class="navbar-brand" href="#">
-            <span class="icon-nav m-0 h5" onclick="MenuBarClickHandler()">
-                <img class="nav-logo-sm mx-2" src="{{ asset('images/menu.svg') }}" alt="logo" />
-            </span>
-            <img class="nav-logo  mx-2" src="{{ asset('images/logo.png') }}" alt="logo" />
-        </a>
-        
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="backend/assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
 
-        <div class="float-right h-auto d-flex pt-2 " style="margin-right: 40px">
-            <div class="user-dropdown">
-                
-                <span class="icon-nav m-0 h5" onclick="MenuBarClickHandler()">
-                    <img class="nav-logo-sm mx-2" src="{{ asset('images/notification.png') }}" alt="logo" style="height: 30px" />
-                </span>
-                <img class="icon-nav-img"
-                    src="{{ !empty($adminData->profile) ? url('upload/admin_images/' . $adminData->profile) : url('upload/admin_images/no_image.jpg') }}"
-                    alt="" />
-                   
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
 
-                <div class="user-dropdown-content ">
-                    <div class="mt-4 text-center">
-                        <img class="icon-nav-img"
-                            src="{{ !empty($adminData->profile) ? url('upload/admin_images/' . $adminData->profile) : url('upload/admin_images/no_image.jpg') }}"
-                            alt="" />
-                        <h6>User Name</h6>
-                        <hr class="user-dropdown-divider  p-0" />
-                    </div>
-                    <a href="{{ route('admin.view.profile') }}" class="side-bar-item">
-                        <span class="side-bar-item-caption">Profile</span>
-                    </a>
-                    <a href="{{ route('admin.change.password') }}" class="side-bar-item">
-                        <span class="side-bar-item-caption">Change Passowrd</span>
-                    </a>
-                    <a href="{{ route('admin.logout') }}" class="side-bar-item">
-                        <span class="side-bar-item-caption">Logout</span>
-                    </a>
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+           
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="backend/assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
                 </div>
-            </div>
-        </div>
-    </div>
-</nav>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="backend/assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="backend/assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="{{ !empty($adminData->profile) ? url('upload/admin_images/'.$adminData->profile) : url('upload/admin_images/no_image.jpg'
+
+            )}}" alt="avatar" class="rounded-circle img-fluid" style="width: 50px;">
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::guard('admin')->user()->name}}</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>{{ Auth::guard('admin')->user()->name }}</h6>
+              <span>{{ Auth::guard('admin')->user()->desegregation }}</span>
+            </li>
+            
+           
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.view.profile') }}">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+           
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.change.password') }}">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.logout') }}">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header>

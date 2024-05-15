@@ -1,22 +1,35 @@
-<div  class="side-nav-open">
+<aside id="sidebar" class="sidebar">
 
-  <a href="{{ url('/dashboard') }}" class="side-bar-item">
-      <i class="bi bi-graph-up"></i>
-      <span style="font-weight: bold" class="side-bar-item-caption">Dashboard</span>
-  </a>
+    <ul class="sidebar-nav" id="sidebar-nav">
 
-   <!-- Brand Management Dropdown -->
-   <div class="dropdown">
-    <a class="dropdown-toggle side-bar-item" href="#" role="button" id="brandDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="bi bi-people"></i>
-        <span style="font-weight: bold" class="side-bar-item-caption">Brands</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="brandDropdown">
-        <a class="dropdown-item" href="{{ route('add.brand') }}">Add Brand</a>
-        <a class="dropdown-item" href="{{ route('all.brand') }}">All Brands</a>
-    </div>
-</div>
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="components-alerts.html">
+              <i class="bi bi-circle"></i><span>Alerts</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-accordion.html">
+              <i class="bi bi-circle"></i><span>Accordion</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-badges.html">
+              <i class="bi bi-circle"></i><span>Badges</span>
+            </a>
+          </li>
+   
+    </ul>
 
-
-</div>
+  </aside>

@@ -18,18 +18,21 @@
                                                 <input type="text" id="name" name="name" class="form-control" required value="{{ old('name', $editData->name) }}">
                                             </div>
                                         </div>
+                                        <br>
                                         <div class="form-group">
                                             <h5>Email <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="email" id="email" name="email" class="form-control" required value="{{ old('email', $editData->email) }}">
                                             </div>
                                         </div>
+                                        <br>
                                         <div class="form-group">
                                             <h5>Desegregation <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="desegregation" id="desegregation" name="desegregation" class="form-control" required value="{{ old('desegregation', $editData->desegregation) }}">
                                             </div>
                                         </div>
+                                        <br>
                                         <div class="form-group">
                                             <h5>Profile <span class="text-danger">*</span></h5>
                                             <div class="controls">
@@ -43,6 +46,7 @@
                                             
                                         </div>
                                     </div>
+                                
                                     <div class="col-6">
                                         <div class="form-group">
                                             <h5>Phone <span class="text-danger">*</span></h5>
@@ -50,12 +54,14 @@
                                                 <input type="text" id="phone" name="phone" class="form-control" required value="{{ old('phone',$editData->phone) }}">
                                             </div>
                                         </div>
+                                        <br>
                                         <div class="form-group">
                                             <h5>Address <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" id="address" name="address" class="form-control" required value="{{ old('address',$editData->address) }}">
                                             </div>
                                         </div>
+                                        <br>
                                         <div class="form-group">
                                             <h5>City <span class="text-danger">*</span></h5>
                                             <div class="controls">
@@ -66,6 +72,7 @@
                                 </div>
                                 
                         </div>
+                        <br>
                         <button type="submit" class="btn btn-info">Submit</button>
                         <!-- Change button type to submit -->
                         </form>

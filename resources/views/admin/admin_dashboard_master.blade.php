@@ -1,142 +1,70 @@
+
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title></title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}" />
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/fontawesome.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
+  <!-- Favicons -->
+  <link href="{{ asset('backend/assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset('backend/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
-    <link href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css') }}"
-        rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <link href="{{ asset('css/jquery.dataTables.min.css') }}" rel="stylesheet" />
-    <script src="{{ asset('js/jquery-3.7.0.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset('backend/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('backend/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('backend/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('backend/assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+  <link href="{{ asset('backend/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+  <link href="{{ asset('backend/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ asset('backend/assets/vendor/simple-datatables/style.css"') }} rel="stylesheet">
 
-    <script src="{{ asset('js/toastify-js.js') }}"></script>
-    <script src="{{ asset('js/axios.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet">
-
-
-
-
-
-
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('backend/assets/css/style.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
-@include('admin.body.header')
 
-    <div id="sideNavRef" class="side-nav-open">
+  <!-- ======= Header ======= -->
+  @include('admin.body.header')
+  <!-- End Header -->
 
-        <a href="{{ url('/dashboard') }}" class="side-bar-item">
-            <i class="bi bi-graph-up"></i>
-            <span style="font-weight: bold" class="side-bar-item-caption">Dashboard</span>
-        </a>
+  <!-- ======= Sidebar ======= -->
+  @include('admin.body.sidebar')
+ <!-- End Sidebar-->
 
-        <a href="{{ url('/customerPage') }}" class="side-bar-item">
-            <i class="bi bi-people"></i>
-            <span style="font-weight: bold"style="font-weight: bold" class="side-bar-item-caption">Customer</span>
-        </a>
+  <main id="main" class="main">
 
-        <a href="{{ url('/categoryPage') }}" class="side-bar-item">
-            <i class="bi bi-list-nested"></i>
-            <span style="font-weight: bold" class="side-bar-item-caption">Category</span>
-        </a>
+  @yield('content')
+  </main><!-- End #main -->
 
-        <a href="{{ url('/productPage') }}" class="side-bar-item">
-            <i class="bi bi-bag"></i>
-            <span style="font-weight: bold" class="side-bar-item-caption">Product</span>
-        </a>
+  <!-- ======= Footer ======= -->
+  @include('admin.body.footer')
+  <!-- End Footer -->
 
-        <a href="{{ url('/salePage') }}" class="side-bar-item">
-            <i class="bi bi-currency-dollar"></i>
-            <span style="font-weight: bold" class="side-bar-item-caption">Create Sale</span>
-        </a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-        <a href="{{ url('/invoicePage') }}" class="side-bar-item">
-            <i class="bi bi-receipt"></i>
-            <span style="font-weight: bold" class="side-bar-item-caption">Invoice</span>
-        </a>
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('backend/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ asset('backend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('backend/assets/vendor/chart.js/chart.umd.js') }}"></script>
+  <script src="{{ asset('backend/assets/vendor/echarts/echarts.min.js') }}"></script>
+  <script src="{{ asset('backend/assets/vendor/quill/quill.js') }}"></script>
+  <script src="{{ asset('backend/assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{ asset('backend/assets/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ asset('backend/assets/vendor/php-email-form/validate.js') }}"></script>
 
-        <a href="{{ url('/reportPage') }}" class="side-bar-item">
-            <i class="bi bi-file-earmark-bar-graph"></i>
-            <span style="font-weight: bold" class="side-bar-item-caption">Report</span>
-        </a>
-
-
-    </div>
-
-
-    <div id="contentRef" class="content">
-        @yield('content')
-    </div>
-
-    <script>
-        function MenuBarClickHandler() {
-            let sideNav = document.getElementById('sideNavRef');
-            let content = document.getElementById('contentRef');
-            if (sideNav.classList.contains("side-nav-open")) {
-                sideNav.classList.add("side-nav-close");
-                sideNav.classList.remove("side-nav-open");
-                content.classList.add("content-expand");
-                content.classList.remove("content");
-            } else {
-                sideNav.classList.remove("side-nav-close");
-                sideNav.classList.add("side-nav-open");
-                content.classList.remove("content-expand");
-                content.classList.add("content");
-            }
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <script>
-        @if (Session::has('message'))
-            var type = "{{ Session::get('alert-type', 'info') }}"
-            switch (type) {
-                case 'info':
-
-                    toastr.options.timeOut = 10000;
-                    toastr.info("{{ Session::get('message') }}");
-                    var audio = new Audio('audio.mp3');
-                    audio.play();
-                    break;
-                case 'success':
-
-                    toastr.options.timeOut = 10000;
-                    toastr.success("{{ Session::get('message') }}");
-                    var audio = new Audio('audio.mp3');
-                    audio.play();
-
-                    break;
-                case 'warning':
-
-                    toastr.options.timeOut = 10000;
-                    toastr.warning("{{ Session::get('message') }}");
-                    var audio = new Audio('audio.mp3');
-                    audio.play();
-
-                    break;
-                case 'error':
-
-                    toastr.options.timeOut = 10000;
-                    toastr.error("{{ Session::get('message') }}");
-                    var audio = new Audio('audio.mp3');
-                    audio.play();
-
-                    break;
-            }
-        @endif
-    </script>
+  <!-- Template Main JS File -->
+  <script src="{{ asset('backend/assets/js/main.js') }}"></script>
 
 </body>
 
