@@ -30,7 +30,6 @@ Route::post('/user-profile-update/{id}' , [IndexController::class, 'ProfileUpdat
 Route::get('/user-password-change/' , [IndexController::class, 'PasswordChange'])->name('user.password.change');
 Route::get('/user-password-update/' , [IndexController::class, 'PasswordUpdate'])->name('user.password.update');
 
-//Brand all route
 //Brand All route
 Route::prefix('brand')->group(function(){
     Route::get('/all' , [BrandController::class, 'AllBrand'])->name('all.brand');
