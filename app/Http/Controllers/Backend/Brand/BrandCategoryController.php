@@ -35,17 +35,9 @@
          $brandCategory->category_name_hin = $request->category_name_hin;
          $brandCategory->category_slug_en = strtolower(str_replace(' ', '-', $request->category_name_en));
          $brandCategory->category_slug_hin = str_replace(' ', '-', $request->category_name_hin);
-         
-         if ($request->hasFile('category_icon')) {
-             $file = $request->file('category_icon');
-             $extension = $file->getClientOriginalExtension();
-             $filename = time() . '.' . $extension;
-             $file->move('uploads/brand_category_icon/', $filename);
-             $brandCategory->category_icon = $filename;
-         } else {
-             $brandCategory->category_icon = $request->category_icon;
-         }
+         $brandCategory->category_icon = $request->category_icon;
  
+
          $brandCategory->save();
  
          $notification = array(
@@ -53,8 +45,46 @@
              'alert-type' => 'success'
          );
  
-         return redirect()->route('view.brand')->with($notification);
+         return redirect()->route('view.category')->with($notification);
+     }
+
+     public function EditCategory($id)
+     {
+         $brandCategory = BrandCategory::findOrFail($id);
+         return view('backend.brand.category.edit-category', compact('brandCategory'));
+     }
+ 
+     public function UpdateCategory(Request $request)
+     {
+         $brandCategory_id = $request->id;
+ 
+         BrandCategory::findOrFail($brandCategory_id)->update([
+             'category_name_en' => $request->category_name_en,
+             'category_name_hin' => $request->category_name_hin,
+             'category_slug_en' => strtolower(str_replace(' ', '-', $request->category_name_en)),
+             'category_slug_hin' => str_replace(' ', '-', $request->category_name_hin),
+             'category_icon' => $request->category_icon,
+         ]);
+ 
+         $notification = array(
+             'message' => 'Brand Updated Successfully',
+             'alert-type' => 'success'
+         );
+ 
+         return redirect()->route('view.category')->with($notification);
+     }
+ 
+     public function DeleteCategory($id)
+     {
+         BrandCategory::findOrFail($id)->delete();
+ 
+         $notification = array(
+             'message' => 'Brand Deleted Successfully',
+             'alert-type' => 'success'
+         );
+ 
+         return redirect()->back()->with($notification);
      }
  }
  
-?>
+

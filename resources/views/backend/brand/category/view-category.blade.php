@@ -49,17 +49,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($brand as $item)
+                                @foreach ($brandCategory as $item)
                                     <tr>
-                                        <td><img src="{{ asset('uploads/brand_image/' . $item->brand_image) }}" width="50px" height="50px" alt=""></td>
-                                        <td>{{ $item->brand_name_en }}</td>
-                                        <td>{{ $item->brand_name_hin }}</td>
+                                        <td><i class="{{ $item->category_icon }}"></i></td>
+                                        <td>{{ $item->category_name_en }}</td>
+                                        <td>{{ $item->category_name_hin }}</td>
                                         <td>
-                                            <a href="{{ route('brand.edit', $item->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="{{ route('category.edit', $item->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                             <button class="btn btn-danger btn-sm delete-button" data-id="{{ $item->id }}">Delete</button>
                                         </td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -68,7 +68,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    {{-- <script>
+    <script>
         
         document.addEventListener('DOMContentLoaded', function () {
             const deleteButtons = document.querySelectorAll('.delete-button');
@@ -92,7 +92,7 @@
                 });
             });
         });
-    </script> --}}
+    </script>
 
 
 @endsection
