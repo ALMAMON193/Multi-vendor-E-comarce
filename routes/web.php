@@ -39,4 +39,5 @@ Route::prefix('brand')->group(function(){
 });
 
 require __DIR__.'/auth.php';
+require __DIR__.'/brands.php';
 require __DIR__.'/admin-auth.php';
