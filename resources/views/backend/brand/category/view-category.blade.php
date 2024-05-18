@@ -42,14 +42,14 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th style="width: 25px">Image</th>
+                                    <th style="width: 25px">icon</th>
                                     <th>Brand_en</th>
                                     <th>Brand_Hin</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($brand as $item)
+                                {{-- @foreach ($brand as $item)
                                     <tr>
                                         <td><img src="{{ asset('uploads/brand_image/' . $item->brand_image) }}" width="50px" height="50px" alt=""></td>
                                         <td>{{ $item->brand_name_en }}</td>
@@ -59,7 +59,7 @@
                                             <button class="btn btn-danger btn-sm delete-button" data-id="{{ $item->id }}">Delete</button>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>
@@ -68,7 +68,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
+    {{-- <script>
         
         document.addEventListener('DOMContentLoaded', function () {
             const deleteButtons = document.querySelectorAll('.delete-button');
@@ -92,7 +92,7 @@
                 });
             });
         });
-    </script>
+    </script> --}}
 
 
 @endsection
