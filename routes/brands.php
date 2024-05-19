@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\Brand\BrandController;
+use App\Http\Controllers\Backend\Brand\SubCategoryController;
 use App\Http\Controllers\Backend\Brand\BrandCategoryController;
 
 
@@ -28,6 +29,19 @@ Route::prefix('category')->group(function(){
 });
 
 //Brand All subcategory route
+
+Route::prefix('subcategory')->group(function(){
+    Route::get('/view' , [SubCategoryController::class, 'AllSubCategory'])->name('view.subcategory');
+    Route::get('/add' , [SubCategoryController::class, 'AddSubCategory'])->name('add.subcategory');
+    Route::post('/store', [SubCategoryController::class, 'StoreSubCategory'])->name('subcategory.store');
+    Route::get('/edit/{id}' , [SubCategoryController::class, 'EditSubCategory'])->name('subcategory.edit');
+    Route::post('/update/{id}' , [SubCategoryController::class, 'UpdateSubCategory'])->name('subcategory.update');
+    Route::get('/delete/{id}' , [SubCategoryController::class, 'DeleteSubCategory'])->name('subcategory.delete');
+});
+
+//Brand All subsubcategory route
+
+
 
 
 
