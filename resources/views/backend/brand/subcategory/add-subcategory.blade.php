@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <h3 class="pt-3">Add Sub Category</h3>
                     <hr>
-                    <form method="post" action="{{ route('subcategory.store') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('subcategory.store') }}" >
                         @csrf <!-- CSRF Token -->
 
                         <div class="form-group">

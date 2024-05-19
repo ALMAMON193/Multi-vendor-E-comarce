@@ -52,4 +52,41 @@ class SubCategoryController extends Controller
         $subcategories = Subcategory::findOrFail($id);
         return view('backend.brand.subcategory.edit-subcategory',compact('brandcategories','subcategories'));
     }
+    public function UpdateSubCategory(Request $request){
+        $subcategory_id = $request->id;
+        $request->validate([
+            'subcategory_name_en' =>'required',
+            'subcategory_name_hin' =>'required',
+            'category_id' =>'required',
+        ],[
+            'subcategory_name_en.required' =>'Please Input Subcategory English Name',
+            'subcategory_name_hin.required' =>'Please Input Subcategory hindi Name',
+            'category_id.required' =>'Please Select Category',
+           
+        ]);
+        $subcategories = Subcategory::findOrFail($subcategory_id);
+        $subcategories->subcategory_name_en = $request->subcategory_name_en;
+        $subcategories->subcategory_name_hin = $request->subcategory_name_hin;
+
+        $subcategories->subcategory_slug_en = strtolower(str_replace(' ', '-', $request->subcategory_slug_en));
+        $subcategories->subcategory_slug_hin = str_replace(' ', '-', $request->subcategory_slug_hin);
+        $subcategories->category_id = $request->category_id;
+        $subcategories->save();
+        $notification = array(
+            'message' => 'Subcategory Updated Successfully',
+
+            'alert-type' => 'success'
+        );
+        return redirect()->route('view.subcategory')->with($notification);
+    }
+
+    public function DeleteSubCategory($id){
+        $subcategories = Subcategory::findOrFail($id);
+        $subcategories->delete();
+        $notification = array(
+            'message' => 'Subcategory Deleted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
 }
