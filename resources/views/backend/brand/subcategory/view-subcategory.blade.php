@@ -42,18 +42,19 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th style="width: 25px">Image</th>
+                                   
+                                    <th>Category</th>
                                     <th>Brand_en</th>
                                     <th>Brand_Hin</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($subcategory as $item)
+                                @foreach ($subcategories as $item)
                                     <tr>
-                                        <td><img src="{{ asset('uploads/brand_image/' . $item->brand_image) }}" width="50px" height="50px" alt=""></td>
-                                        <td>{{ $item->brand_name_en }}</td>
-                                        <td>{{ $item->brand_name_hin }}</td>
+                                        
+                                        <td>{{ $item->subcategory_name_en }}</td>
+                                        <td>{{ $item->subcategory_name_hin }}</td>
                                         <td>
                                             <a href="{{ route('brand.edit', $item->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                             <button class="btn btn-danger btn-sm delete-button" data-id="{{ $item->id }}">Delete</button>

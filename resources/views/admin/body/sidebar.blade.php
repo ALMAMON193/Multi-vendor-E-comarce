@@ -44,23 +44,23 @@
           </ul>
       </li>
       <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#category-nav" data-bs-toggle="collapse" href="#">
+          <a class="nav-link collapsed" data-bs-target="#subcategory-nav" data-bs-toggle="collapse" href="#">
               <i class="bi bi-menu-button-wide"></i><span>Brand Sub Category</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
-          <ul id="category-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <ul id="subcategory-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
               <li>
                   <a href="{{ route('add.subcategory') }}">
                       <i class="bi bi-circle"></i><span>Add Sub Category</span>
                   </a>
               </li>
               <li>
-                  <a href="{{ route('view.subcatrgory') }}">
+                  <a href="{{ route('view.subcategory') }}">
                       <i class="bi bi-circle"></i><span>View Sub Category</span>
                   </a>
               </li>
           </ul>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#category-nav" data-bs-toggle="collapse" href="#">
               <i class="bi bi-menu-button-wide"></i><span>Brand Category</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
@@ -110,6 +110,6 @@
                   </a>
               </li>
           </ul>
-      </li>
+      </li> --}}
   </ul>
 </aside>
