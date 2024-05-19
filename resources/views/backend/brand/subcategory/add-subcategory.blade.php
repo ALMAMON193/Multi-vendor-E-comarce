@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <h3 class="pt-3">Add Sub Category</h3>
                     <hr>
-                    <form method="post" action="{{ route('category.store') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('subcategory.store') }}" enctype="multipart/form-data">
                         @csrf <!-- CSRF Token -->
 
                         <div class="form-group">
@@ -33,8 +33,11 @@
                               @foreach ($brandcategories as $item)
                               <option value="{{ $item->id }}">{{ $item->category_name_en }}</option>
                               @endforeach
-                             
+                        
                             </select>
+                            @error('category_id')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                           </div>
                           <br>
                       </div>
@@ -42,9 +45,9 @@
                         <div class="form-group">
                             <h5> Sub Category Name English <span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input type="text" id="category_name_en" name="category_name_en" class="form-control" >
+                                <input type="text" id="" name="subcategory_name_en" class="form-control" >
                             </div>
-                            @error('category_name_en')
+                            @error('subcategory_name_en')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
@@ -52,8 +55,8 @@
                         <div class="form-group">
                             <h5> Sub Category Name Hindi <span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input type="text" id="category_name_hin" name="category_name_hin" class="form-control" >
-                                @error('category_name_hin')
+                                <input type="text" id="subcategory_name_hin" name="subcategory_name_hin" class="form-control" >
+                                @error('subcategory_name_hin')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror  
                             </div>

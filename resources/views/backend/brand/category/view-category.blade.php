@@ -52,6 +52,7 @@
                                 @foreach ($brandCategory as $item)
                                     <tr>
                                         <td><i class="{{ $item->category_icon }}"></i></td>
+
                                         <td>{{ $item->category_name_en }}</td>
                                         <td>{{ $item->category_name_hin }}</td>
                                         <td>

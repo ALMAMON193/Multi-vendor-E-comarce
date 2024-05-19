@@ -17,4 +17,11 @@ class Subcategory extends Model
         'subcategory_slug_hin',
       
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(BrandCategory::class ,'category_id','id');
+    }
+
+    
 }
