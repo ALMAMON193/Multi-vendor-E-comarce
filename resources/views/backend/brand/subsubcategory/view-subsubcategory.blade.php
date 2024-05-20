@@ -6,8 +6,8 @@
                 <div class="page-title-right">
                     <br>
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Brands</a></li>
-                        <li class="breadcrumb-item active">All brand</li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">sub sub category</a></li>
+                        <li class="breadcrumb-item active">All Sub Sub Category</li>
                     </ol>
                     <br>
                 </div>
@@ -20,9 +20,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="pt-3">Category Records</h3>
+                    <h3 class="pt-3">Sub Sub Category Records</h3>
                     <hr>
-
                     <div class="row">
                         <div class="col-md-2">
                             <select id="pageLengthSelect" class="form-select">
@@ -42,21 +41,23 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th style="width: 25px">icon</th>
-                                    <th>Category_en</th>
-                                    <th>Category_hin</th>
+                                    
+                                    <th>Category</th>
+                                    <th>Sub Category</th>
+                                    <th>S.S.C.N-English</th>
+                                    <th>S.S.C.N-Hindi</th>                                  
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($brandCategory as $item)
+                                @foreach ($subsubcategories as $item)
                                     <tr>
-                                        <td><span><i class="{{ $item->category_icon }}"></i></span></td>
-                                        <td>{{ $item->category_name_en }}</td>
-                                        <td>{{ $item->category_name_hin }}</td>
+                                        <td><img src="" width="50px" height="50px" alt=""></td>
+                                        <td></td>
+                                        <td></td>
                                         <td>
-                                            <a href="{{ route('category.edit', $item->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                            <button class="btn btn-danger btn-sm delete-button-category" data-id="{{ $item->id }}">Delete</button>
+                                            <a href="{{ route('subsubcategory.edit', $item->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                            <button class="btn btn-danger btn-sm delete-button" data-id="{{ $item->id }}">Delete</button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -71,10 +72,10 @@
     <script>
         
         document.addEventListener('DOMContentLoaded', function () {
-            const deleteButtons = document.querySelectorAll('.delete-button-category');
+            const deleteButtons = document.querySelectorAll('.delete-button');
             deleteButtons.forEach(button => {
                 button.addEventListener('click', function () {
-                    const categoryID = this.getAttribute('data-id');
+                    const brandId = this.getAttribute('data-id');
                     Swal.fire({
                         title: 'Are you sure?',
                         text: "You won't be able to revert this!",
@@ -86,7 +87,7 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Redirect to the delete route
-                            window.location.href = "{{ route('category.delete', '') }}/" + categoryID;
+                            window.location.href = "{{ route('brand.delete', '') }}/" + brandId;
                         }
                     });
                 });

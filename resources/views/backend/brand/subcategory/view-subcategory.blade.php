@@ -20,7 +20,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="pt-3">Brand Records</h3>
+                    <h3 class="pt-3">Sub Category Records</h3>
                     <hr>
 
                     <div class="row">
@@ -57,7 +57,7 @@
                                         <td>{{ $item->subcategory_name_hin }}</td>
                                         <td>
                                             <a href="{{ route('subcategory.edit', $item->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                            <button class="btn btn-danger btn-sm delete-button" data-id="{{ $item->id }}">Delete</button>
+                                            <button class="btn btn-danger btn-sm delete-button-sub-category" data-id="{{ $item->id }}">Delete</button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -72,10 +72,10 @@
     <script>
         
         document.addEventListener('DOMContentLoaded', function () {
-            const deleteButtons = document.querySelectorAll('.delete-button');
+            const deleteButtons = document.querySelectorAll('.delete-button-sub-category');
             deleteButtons.forEach(button => {
                 button.addEventListener('click', function () {
-                    const brandId = this.getAttribute('data-id');
+                    const subCategoryId = this.getAttribute('data-id');
                     Swal.fire({
                         title: 'Are you sure?',
                         text: "You won't be able to revert this!",
@@ -87,7 +87,7 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Redirect to the delete route
-                            window.location.href = "{{ route('brand.delete', '') }}/" + brandId;
+                            window.location.href = "{{ route('subcategory.delete', '') }}/" + subCategoryId;
                         }
                     });
                 });

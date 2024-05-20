@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\Brand\BrandController;
 use App\Http\Controllers\Backend\Brand\SubCategoryController;
-use App\Http\Controllers\Backend\Brand\BrandCategoryController;
+use App\Http\Controllers\Backend\Brand\CategoryController;
+use App\Http\Controllers\Backend\Brand\SubSubCategoryController;
 
 
 
@@ -20,12 +21,12 @@ Route::prefix('brand')->group(function(){
 //Brand All category route
 
 Route::prefix('category')->group(function(){
-    Route::get('/view' , [BrandCategoryController::class, 'AllCategory'])->name('view.category');
-    Route::get('/add' , [BrandCategoryController::class, 'AddCategory'])->name('add.category');
-    Route::post('/store', [BrandCategoryController::class, 'StoreCategory'])->name('category.store');
-    Route::get('/edit/{id}' , [BrandCategoryController::class, 'EditCategory'])->name('category.edit');
-    Route::post('/update/{id}' , [BrandCategoryController::class, 'UpdateCategory'])->name('category.update');
-    Route::get('/delete/{id}' , [BrandCategoryController::class, 'DeleteCategory'])->name('category.delete');
+    Route::get('/view' , [CategoryController::class, 'AllCategory'])->name('view.category');
+    Route::get('/add' , [CategoryController::class, 'AddCategory'])->name('add.category');
+    Route::post('/store', [CategoryController::class, 'StoreCategory'])->name('category.store');
+    Route::get('/edit/{id}' , [CategoryController::class, 'EditCategory'])->name('category.edit');
+    Route::post('/update/{id}' , [CategoryController::class, 'UpdateCategory'])->name('category.update');
+    Route::get('/delete/{id}' , [CategoryController::class, 'DeleteCategory'])->name('category.delete');
 });
 
 //Brand All subcategory route
@@ -40,6 +41,17 @@ Route::prefix('subcategory')->group(function(){
 });
 
 //Brand All subsubcategory route
+
+Route::prefix('subsubcategory')->group(function(){
+    Route::get('/view' , [SubSubCategoryController::class, 'AllSubSubCategory'])->name('view.subsubcategory');
+    Route::get('/add' , [SubSubCategoryController::class, 'AddSubSubCategory'])->name('add.subsubcategory');
+    Route::post('/store', [SubSubCategoryController::class, 'StoreSubSubCategory'])->name('subsubcategory.store');
+    Route::get('/edit/{id}' , [SubSubCategoryController::class, 'EditSubSubCategory'])->name('subsubcategory.edit');
+    Route::post('/update/{id}' , [SubSubCategoryController::class, 'UpdateSubSubCategory'])->name('subsubcategory.update');
+    Route::get('/delete/{id}' , [SubSubCategoryController::class, 'DeleteSubSubCategory'])->name('subsubcategory.delete');
+});
+
+
 
 
 

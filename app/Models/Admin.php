@@ -27,7 +27,7 @@ class Admin extends Authenticatable
         'desegregation'
 
     ];
-
+   
     /**
      * The attributes that should be hidden for serialization.
      *
