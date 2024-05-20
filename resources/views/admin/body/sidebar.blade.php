@@ -60,24 +60,24 @@
               </li>
           </ul>
       </li>
-      {{-- <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#category-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-menu-button-wide"></i><span>Brand Category</span><i class="bi bi-chevron-down ms-auto"></i>
+    <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#product-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-menu-button-wide"></i><span>Product</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
-          <ul id="category-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+          <ul id="product-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
               <li>
-                  <a href="{{ route('add.category') }}">
-                      <i class="bi bi-circle"></i><span>Add Category</span>
+                  <a href="{{ route('product.add') }}">
+                      <i class="bi bi-circle"></i><span>Add Product</span>
                   </a>
               </li>
               <li>
-                  <a href="{{ route('view.category') }}">
-                      <i class="bi bi-circle"></i><span>View Category</span>
+                  <a href="{{ route('product.view') }}">
+                      <i class="bi bi-circle"></i><span>View Product</span>
                   </a>
               </li>
           </ul>
       </li>
-      <li class="nav-item">
+       {{--  <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#category-nav" data-bs-toggle="collapse" href="#">
               <i class="bi bi-menu-button-wide"></i><span>Brand Category</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
