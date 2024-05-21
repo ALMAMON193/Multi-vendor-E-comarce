@@ -16,6 +16,10 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+  <!-- Tags Input CSS -->
+<link href="{{ asset('backend/assets/css/bootstrap-tagsinput.css') }}" rel="stylesheet">
+
+
 
 
   <!-- Vendor CSS Files -->
@@ -64,11 +68,13 @@
  <script src="{{ asset('backend/assets/js/datatables.min.js') }}"></script>
   <script src="{{ asset('backend/assets/vendor/tinymce/tinymce.min.js') }}"></script>
   <script src="{{ asset('backend/assets/vendor/php-email-form/validate.js') }}"></>
+   
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Template Main JS File -->
   <script src="{{ asset('backend/assets/js/main.js') }}"></script>
-
+  <!-- Tags Input JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 

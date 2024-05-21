@@ -83,12 +83,12 @@
           </a>
           <ul id="product-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
               <li>
-                  <a href="">
+                  <a href="{{ route('product.add') }}">
                       <i class="bi bi-circle"></i><span>Add Product</span>
                   </a>
               </li>
               <li>
-                  <a href="">
+                  <a href="{{ route('product.view') }}">
                       <i class="bi bi-circle"></i><span>View Product</span>
                   </a>
               </li>
