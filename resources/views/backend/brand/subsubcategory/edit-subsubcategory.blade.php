@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <h3 class="pt-3">Edit sub subcategory</h3>
                     <hr>
-                    <form method="POST" action="{{ route('subsubcategory.store') }}">
+                    {{-- <form method="POST" action="{{ route('subsubcategory.store') }}">
                         @csrf <!-- CSRF Token -->
                         <div class="form-group">
                             <h5>Brand Category<span class="text-danger">*</span></h5>
@@ -32,7 +32,7 @@
                                     <option value="" disabled="" selected>select category</option>
       
                                     @foreach ($brandcategories as $item)
-                                    <option value="{{ $item->id }}"{{ $subcategories->category_id == $item->id ? 'selected' : '' }}>{{ $item->category_name_en }}</option>
+                                    <option value="{{ $item->id }}"{{ $category->category_id == $item->id ? 'selected' : '' }}>{{ $item->category_name_en }}</option>
                                     @endforeach
                               
                                   </select>
@@ -81,7 +81,7 @@
                         </div>
                        
                         <button class="btn btn-success" type="submit">Submit</button>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>
