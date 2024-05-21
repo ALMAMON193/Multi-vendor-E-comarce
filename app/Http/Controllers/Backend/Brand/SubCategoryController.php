@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Backend\Brand;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
+use App\Models\SubSubCategory;
+use App\Http\Controllers\Controller;
 
 class SubCategoryController extends Controller
 {
@@ -17,8 +18,7 @@ class SubCategoryController extends Controller
 
     public function AddSubCategory(){
         $brandcategories = Category::orderBy('category_name_en','ASC')->get();
-        $subcategories = Subcategory::latest()->get();
-        return view('backend.brand.subcategory.add-subcategory' , compact('brandcategories','subcategories'));
+        return view('backend.brand.subcategory.add-subcategory' , compact('brandcategories',));
     }
 
     public function StoreSubCategory(Request $request){
@@ -89,4 +89,19 @@ class SubCategoryController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+
+    //sub sub category controller note
+
+    public function AllSubSubCategory(){
+
+        $brandcategories = Category::orderBy('category_name_en','ASC')->get();
+        $subsubcategories = SubSubCategory::latest()->get();
+        return view('backend.brand.subsubcategory.view-subsubcategory',compact('brandcategories','subsubcategories'));
+
+    }
+    public function GetSubCategory($category_id){
+       $subcat = Subcategory::where('category_id',$category_id)->orderBy('subcategory_name_en','ASC')->get();
+       return json_encode($subcat);
+    }
+   
 }

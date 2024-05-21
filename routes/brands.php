@@ -27,28 +27,31 @@ Route::prefix('category')->group(function(){
     Route::get('/edit/{id}' , [CategoryController::class, 'EditCategory'])->name('category.edit');
     Route::post('/update/{id}' , [CategoryController::class, 'UpdateCategory'])->name('category.update');
     Route::get('/delete/{id}' , [CategoryController::class, 'DeleteCategory'])->name('category.delete');
+    Route::get('/subcategory/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
 });
 
 //Brand All subcategory route
 
-Route::prefix('subcategory')->group(function(){
+Route::prefix('category/subcategory')->group(function(){
     Route::get('/view' , [SubCategoryController::class, 'AllSubCategory'])->name('view.subcategory');
     Route::get('/add' , [SubCategoryController::class, 'AddSubCategory'])->name('add.subcategory');
     Route::post('/store', [SubCategoryController::class, 'StoreSubCategory'])->name('subcategory.store');
     Route::get('/edit/{id}' , [SubCategoryController::class, 'EditSubCategory'])->name('subcategory.edit');
     Route::post('/update/{id}' , [SubCategoryController::class, 'UpdateSubCategory'])->name('subcategory.update');
     Route::get('/delete/{id}' , [SubCategoryController::class, 'DeleteSubCategory'])->name('subcategory.delete');
+    Route::get('/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
 });
 
 //Brand All subsubcategory route
 
-Route::prefix('subsubcategory')->group(function(){
+Route::prefix('category/subcategory/subsubcategory')->group(function(){
     Route::get('/view' , [SubSubCategoryController::class, 'AllSubSubCategory'])->name('view.subsubcategory');
     Route::get('/add' , [SubSubCategoryController::class, 'AddSubSubCategory'])->name('add.subsubcategory');
     Route::post('/store', [SubSubCategoryController::class, 'StoreSubSubCategory'])->name('subsubcategory.store');
     Route::get('/edit/{id}' , [SubSubCategoryController::class, 'EditSubSubCategory'])->name('subsubcategory.edit');
     Route::post('/update/{id}' , [SubSubCategoryController::class, 'UpdateSubSubCategory'])->name('subsubcategory.update');
     Route::get('/delete/{id}' , [SubSubCategoryController::class, 'DeleteSubSubCategory'])->name('subsubcategory.delete');
+  
 });
 
 

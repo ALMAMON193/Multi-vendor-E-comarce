@@ -6,8 +6,8 @@
                 <div class="page-title-right">
                     <br>
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Brands</a></li>
-                        <li class="breadcrumb-item active">All brand</li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">sub category</a></li>
+                        <li class="breadcrumb-item active">All subcategory</li>
                     </ol>
                     <br>
                 </div>
@@ -44,8 +44,8 @@
                                 <tr>
                                    
                                     <th>Category</th>
-                                    <th>Brand_en</th>
-                                    <th>Brand_Hin</th>
+                                    <th>Sub category_name_en</th>
+                                    <th>Sub category_name_hin</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

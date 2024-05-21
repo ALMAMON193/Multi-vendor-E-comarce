@@ -52,9 +52,15 @@
                             <tbody>
                                 @foreach ($subsubcategories as $item)
                                     <tr>
-                                        <td><img src="" width="50px" height="50px" alt=""></td>
-                                        <td></td>
-                                        <td></td>
+                                       
+                                        <td>{{ $item['category']['category_name_en'] }}</td>
+                                        <td>{{ $item['subcategory']['subcategory_name_en'
+                                            
+                                        ]}}</td>
+                                        <td>{{ $item->sub_subcategory_name_en }}</td>
+                                        <td>{{ $item->sub_subcategory_name_hin
+                                            
+                                        }}
                                         <td>
                                             <a href="{{ route('subsubcategory.edit', $item->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                             <button class="btn btn-danger btn-sm delete-button" data-id="{{ $item->id }}">Delete</button>
@@ -68,32 +74,6 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        
-        document.addEventListener('DOMContentLoaded', function () {
-            const deleteButtons = document.querySelectorAll('.delete-button');
-            deleteButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const brandId = this.getAttribute('data-id');
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            // Redirect to the delete route
-                            window.location.href = "{{ route('brand.delete', '') }}/" + brandId;
-                        }
-                    });
-                });
-            });
-        });
-    </script>
-
+    
 
 @endsection

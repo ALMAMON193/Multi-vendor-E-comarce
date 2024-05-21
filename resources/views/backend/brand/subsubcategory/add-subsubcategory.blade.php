@@ -17,68 +17,65 @@
     <!-- end page title -->
 
     <div class="row">
-
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <h3 class="pt-3">Add Sub SubCategory</h3>
                     <hr>
-                    <form method="POST" action="{{ route('brand.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('subsubcategory.store') }}">
                         @csrf <!-- CSRF Token -->
                         <div class="form-group">
                             <h5>Brand Category<span class="text-danger">*</span></h5>
                             <div class="controls">
-                              <select name="category_id" id="category_id" class="form-select" aria-label="Default select example">
-                                <option value="" disabled="" selected>select category</option>
-                                @foreach ($brandcategories as $item)
-                                <option value="{{ $item->id }}">{{ $item->category_name_en }}</option>
-                                @endforeach
-                          
-                              </select>
-                              @error('category_id')
-                              <span class="text-danger">{{ $message }}</span>
-                          @enderror
+                                <select name="category_id" class="form-control"  >
+                                    <option value="" selected="" disabled="">Select Category</option>
+                                    @foreach($brandcategories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->category_name_en }}</option>	
+                                    @endforeach
+                                </select>
+                               
+                                @error('category_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <br>
                         </div>
                         <div class="form-group">
                             <h5>Brand Sub Category<span class="text-danger">*</span></h5>
                             <div class="controls">
-                              <select name="category_id" id="category_id" class="form-select" aria-label="Default select example">
-                                <option value="" disabled="" selected>select category</option>
-                                @foreach ($brandsubcategories as $item)
-                                <option value="{{ $item->id }}">{{ $item->sub_category_name_en }}</option>
-                                @endforeach
-                          
-                              </select>
-                              @error('category_id')
-                              <span class="text-danger">{{ $message }}</span>
-                          @enderror
+                                <select name="sub_category_id" class="form-control"  >
+                                    <option value="" selected="" disabled="">Select subcategory</option>
+                                     
+                                </select>
+                               
+                                @error('sub_category_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <br>
                         </div>
                         <br>
+                        
                         <div class="form-group">
-                            <h5>Sub subCategory Name English <span class="text-danger">*</span></h5>
+                            <h5>Sub SubCategory Name English <span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input type="text" id="brand_name_hin" name="brand_name_hin" class="form-control" >
-                                @error('brand_name_hin')
+                                <input type="text" id="sub_subcategory_name_en" name="sub_subcategory_name_en" class="form-control">
+                                @error('sub_subcategory_name_en')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror  
                             </div>
                             <br>
                         </div>
                         <div class="form-group">
-                            <h5>Sub subCategory Name Hindi <span class="text-danger">*</span></h5>
+                            <h5>Sub SubCategory Name Hindi <span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input type="text" id="brand_name_hin" name="brand_name_hin" class="form-control" >
-                                @error('brand_name_hin')
+                                <input type="text" id="sub_subcategory_name_hin" name="sub_subcategory_name_hin" class="form-control">
+                                @error('sub_subcategory_name_hin')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror  
                             </div>
                             <br>
                         </div>
-                       
                        
                         <button class="btn btn-success" type="submit">Submit</button>
                     </form>
@@ -86,19 +83,29 @@
             </div>
         </div>
     </div>
-    
-@endsection
-@section('scripts')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript">
         $(document).ready(function() {
-            $('#brand_image').change(function(e) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $('#showImage').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(e.target.files[0]);
-            });
-        });
-    </script>
+          $('select[name="category_id"]').on('change', function(){
+              var category_id = $(this).val();
+              if(category_id) {
+                  $.ajax({
+                      url: "{{  url('/category/subcategory/ajax') }}/"+category_id,
+                      type:"GET",
+                      dataType:"json",
+                      success:function(data) {
+                         var d =$('select[name="sub_category_id"]').empty();
+                            $.each(data, function(key, value){
+                                $('select[name="sub_category_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_en + '</option>');
+                            });
+                      },
+                  });
+              } else {
+                  alert('danger');
+              }
+          });
+      });
+      </script>
+    
 @endsection
