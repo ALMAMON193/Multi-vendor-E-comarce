@@ -1,9 +1,11 @@
 <?php 
 
 namespace App\Http\Controllers\Backend\Brand;
-use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
+use App\Models\SubSubCategory;
+use App\Http\Controllers\Controller;
  
  class CategoryController extends Controller
  {
@@ -68,6 +70,8 @@ use Illuminate\Http\Request;
 
         return redirect()->back()->with('message', 'Brand Deleted Successfully');
   }
- }
+  
+
+}
  
 

@@ -1,5 +1,6 @@
 @extends('admin.admin_dashboard_master')
 @section('content')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -83,8 +84,7 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+   
     <script type="text/javascript">
         $(document).ready(function() {
           $('select[name="category_id"]').on('change', function(){

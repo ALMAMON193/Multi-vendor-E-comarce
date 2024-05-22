@@ -1,6 +1,7 @@
 @extends('admin.admin_dashboard_master')
+@section('content') 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-@section('content')
     <style>
         .bootstrap-tagsinput .tag {
             background-color: rgb(20, 216, 118);
@@ -405,7 +406,62 @@
     <script>
         CKEDITOR.replace('editor1');
         CKEDITOR.replace('editor2');
-        CKEDITOR.replace('editor3');
-        CKEDITOR.replace('editor4');
+  
     </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      // Handle change event for category selection
+      $('select[name="category_id"]').on('change', function() {
+        var category_id = $(this).val();
+        if (category_id) {
+          $.ajax({
+            url: "{{ url('/category/subcategory/ajax') }}/" + category_id,
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+              var subcategorySelect = $('select[name="subcategory_id"]').empty();
+              subcategorySelect.append('<option value="">Select Subcategory</option>');
+              $.each(data, function(key, value) {
+                subcategorySelect.append('<option value="' + value.id + '">' + value.subcategory_name_en + '</option>');
+              });
+              $('select[name="subsubcategory_id"]').empty().append('<option value="">Select Sub-Subcategory</option>'); // Reset sub-subcategory dropdown
+            },
+            error: function() {
+              alert('Unable to load subcategories');
+            }
+          });
+        } else {
+          alert('Please select a category');
+          $('select[name="subcategory_id"]').empty().append('<option value="">Select Subcategory</option>');
+          $('select[name="subsubcategory_id"]').empty().append('<option value="">Select Sub-Subcategory</option>');
+        }
+      });
+  
+      // Handle change event for subcategory selection
+      $('select[name="subcategory_id"]').on('change', function() {
+        var subcategory_id = $(this).val();
+        if (subcategory_id) {
+          $.ajax({
+            url: "{{ url('/category/subcategory/sub-subcategory/ajax') }}/" + subcategory_id,
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+              var subsubcategorySelect = $('select[name="subsubcategory_id"]').empty();
+              subsubcategorySelect.append('<option value="">Select Sub-Subcategory</option>');
+              $.each(data, function(key, value) {
+                subsubcategorySelect.append('<option value="' + value.id + '">' + value.sub_subcategory_name_en + '</option>');
+              });
+            },
+            error: function() {
+              alert('Unable to load sub-subcategories');
+            }
+          });
+        } else {
+          alert('Please select a subcategory');
+          $('select[name="subsubcategory_id"]').empty().append('<option value="">Select Sub-Subcategory</option>');
+        }
+      });
+    });
+  </script>
+  
 @endsection
