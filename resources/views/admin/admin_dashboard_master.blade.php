@@ -1,93 +1,113 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <meta charset="utf-8" />
+    <title>Dashboard | Upcube - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesdesign" name="author" />
+    <!-- DataTables -->
+    <link href="{{ asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ asset('backend/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}"
+        rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/libs/datatables.net-select-bs4/css//select.bootstrap4.min.css') }}"
+        rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
+    <link href="{{ asset('backend/assets/css/bootstrap-tagsinput.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/assets/css/bootstrap-tagsinput.css') }}" rel="stylesheet">
+    <!-- jquery.vectormap css -->
+    <link href="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}"
+        rel="stylesheet" type="text/css" />
 
-  <!-- Favicons -->
-  <link href="{{ asset('backend/assets/img/favicon.png') }}" rel="icon">
-  <link href="{{ asset('backend/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- DataTables -->
+    <link href="{{ asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}"
+        rel="stylesheet" type="text/css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Responsive datatable examples -->
+    <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}"
+        rel="stylesheet" type="text/css" />
 
-  <!-- Tags Input CSS -->
-<link href="{{ asset('backend/assets/css/bootstrap-tagsinput.css') }}" rel="stylesheet">
+    <!-- Bootstrap Dark Css -->
+    <link href="{{ asset('backend/assets/css/bootstrap-dark.min.css') }}" id="bootstrap-style" rel="stylesheet"
+        type="text/css" />
+    <!-- Icons Dark Css -->
+    <link href="{{ asset('backend/assets/css/icons-dark.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- App Dark Css-->
+    <link href="{{ asset('backend/assets/css/app-dark.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 
-
-
-
-  <!-- Vendor CSS Files -->
-  <link href="{{ asset('backend/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('backend/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-  <link href="{{ asset('backend/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('backend/assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
-  <link href="{{ asset('backend/assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
-  <link href="{{ asset('backend/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('backend/assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}">
-  
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-  <!-- Template Main CSS File -->
-  <link href="{{ asset('backend/assets/css/style.css') }}" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body data-topbar="dark">
 
-  <!-- ======= Header ======= -->
-  @include('admin.body.header')
-  <!-- End Header -->
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
-  <!-- ======= Sidebar ======= -->
-  @include('admin.body.sidebar')
- <!-- End Sidebar-->
+    <!-- Begin page -->
+    <div id="layout-wrapper">
 
-  <main id="main" class="main">
+        @include('admin.body.header')
 
-  @yield('content')
-  </main><!-- End #main -->
+        <!-- ========== Left Sidebar Start ========== -->
+        @include('admin.body.sidebar')
+        <!-- Left Sidebar End -->
 
-  <!-- ======= Footer ======= -->
-  @include('admin.body.footer')
-  <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="{{ asset('backend/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
-  <script src="{{ asset('backend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('backend/assets/vendor/chart.js/chart.umd.js') }}"></script>
-  <script src="{{ asset('backend/assets/vendor/echarts/echarts.min.js') }}"></script>
-  <script src="{{ asset('backend/assets/vendor/quill/quill.js') }}"></script>
- <script src="{{ asset('backend/assets/js/datatables.min.js') }}"></script>
-  <script src="{{ asset('backend/assets/vendor/tinymce/tinymce.min.js') }}"></script>
-  <script src="{{ asset('backend/assets/vendor/php-email-form/validate.js') }}"></>
-   
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        @yield('content')
+        <!-- end main content-->
 
-  <!-- Template Main JS File -->
-  <script src="{{ asset('backend/assets/js/main.js') }}"></script>
-  <!-- Tags Input JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    </div>
 
-<script>
-    // Display Toastr messages from session
-    @if(Session::has('success'))
-        toastr.success("{{ Session::get('success') }}");
-    @endif
 
-    @if(Session::has('error'))
-        toastr.error("{{ Session::get('error') }}");
-    @endif
-</script>
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
+
+    <!-- apexcharts -->
+    <script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+
+    <!-- jquery.vectormap map -->
+    <script src="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js') }}">
+    </script>
+    <script src="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js') }}">
+    </script>
+
+
+    <!-- DataTables JS -->
+    <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#datatable').DataTable({
+                responsive: true,
+
+            });
+        });
+    </script>
+
+    <script src="{{ asset('backend/assets/js/pages/dashboard.init.js') }}"></script>
+
+    <!-- App js -->
+    <script src="{{ asset('backend/assets/js/app.js') }}"></script>
 </body>
 
 </html>

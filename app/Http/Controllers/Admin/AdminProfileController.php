@@ -32,9 +32,9 @@ class AdminProfileController extends Controller
         $data->address = $request->address;
         if ($request->file('profile')) {
             $file = $request->file('profile');
-            @unlink(public_path('upload/admin_images/' . $data->profile));
+            @unlink(public_path('uploads/admin_images/' . $data->profile));
             $filename = date('YmdHi') . $file->getClientOriginalName();
-            $file->move(public_path('upload/admin_images/'), $filename);
+            $file->move(public_path('uploads/admin_images/'), $filename);
             $data['profile'] = $filename;
         }
         $data->save();

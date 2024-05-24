@@ -1,647 +1,423 @@
 @extends('admin.admin_dashboard_master')
 @section('content')
-<div class="pagetitle">
-    <h1>Dashboard</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item active">Dashboard</li>
-      </ol>
-    </nav>
-  </div><!-- End Page Title -->
+<div class="main-content">
 
-  <section class="section dashboard">
-    <div class="row">
+  <div class="page-content">
+      <div class="container-fluid">
+          
+          <!-- start page title -->
+          <div class="row">
+              <div class="col-12">
+                  <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                      <h4 class="mb-sm-0">Dashboard</h4>
 
-      <!-- Left side columns -->
-      <div class="col-lg-8">
-        <div class="row">
-
-          <!-- Sales Card -->
-          <div class="col-xxl-4 col-md-6">
-            <div class="card info-card sales-card">
-
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">Sales <span>| Today</span></h5>
-
-                <div class="d-flex align-items-center">
-                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-cart"></i>
-                  </div>
-                  <div class="ps-3">
-                    <h6>145</h6>
-                    <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <div class="page-title-right">
+                          <ol class="breadcrumb m-0">
+                              <li class="breadcrumb-item"><a href="javascript: void(0);">Upcube</a></li>
+                              <li class="breadcrumb-item active">Dashboard</li>
+                          </ol>
+                      </div>
 
                   </div>
-                </div>
               </div>
+          </div>
+          <!-- end page title -->
 
-            </div>
-          </div><!-- End Sales Card -->
+          <div class="row">
+              <div class="col-xl-3 col-md-6">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="d-flex">
+                              <div class="flex-grow-1">
+                                  <p class="text-truncate font-size-14 mb-2">Total Sales</p>
+                                  <h4 class="mb-2">1452</h4>
+                                  <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>from previous period</p>
+                              </div>
+                              <div class="avatar-sm">
+                                  <span class="avatar-title bg-light text-primary rounded-3">
+                                      <i class="ri-shopping-cart-2-line font-size-24"></i>  
+                                  </span>
+                              </div>
+                          </div>                                            
+                      </div><!-- end cardbody -->
+                  </div><!-- end card -->
+              </div><!-- end col -->
+              <div class="col-xl-3 col-md-6">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="d-flex">
+                              <div class="flex-grow-1">
+                                  <p class="text-truncate font-size-14 mb-2">New Orders</p>
+                                  <h4 class="mb-2">938</h4>
+                                  <p class="text-muted mb-0"><span class="text-danger fw-bold font-size-12 me-2"><i class="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from previous period</p>
+                              </div>
+                              <div class="avatar-sm">
+                                  <span class="avatar-title bg-light text-success rounded-3">
+                                      <i class="mdi mdi-currency-usd font-size-24"></i>  
+                                  </span>
+                              </div>
+                          </div>                                              
+                      </div><!-- end cardbody -->
+                  </div><!-- end card -->
+              </div><!-- end col -->
+              <div class="col-xl-3 col-md-6">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="d-flex">
+                              <div class="flex-grow-1">
+                                  <p class="text-truncate font-size-14 mb-2">New Users</p>
+                                  <h4 class="mb-2">8246</h4>
+                                  <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>16.2%</span>from previous period</p>
+                              </div>
+                              <div class="avatar-sm">
+                                  <span class="avatar-title bg-light text-primary rounded-3">
+                                      <i class="ri-user-3-line font-size-24"></i>  
+                                  </span>
+                              </div>
+                          </div>                                              
+                      </div><!-- end cardbody -->
+                  </div><!-- end card -->
+              </div><!-- end col -->
+              <div class="col-xl-3 col-md-6">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="d-flex">
+                              <div class="flex-grow-1">
+                                  <p class="text-truncate font-size-14 mb-2">Unique Visitors</p>
+                                  <h4 class="mb-2">29670</h4>
+                                  <p class="text-muted mb-0"><span class="text-success fw-bold font-size-12 me-2"><i class="ri-arrow-right-up-line me-1 align-middle"></i>11.7%</span>from previous period</p>
+                              </div>
+                              <div class="avatar-sm">
+                                  <span class="avatar-title bg-light text-success rounded-3">
+                                      <i class="mdi mdi-currency-btc font-size-24"></i>  
+                                  </span>
+                              </div>
+                          </div>                                              
+                      </div><!-- end cardbody -->
+                  </div><!-- end card -->
+              </div><!-- end col -->
+          </div><!-- end row -->
 
-          <!-- Revenue Card -->
-          <div class="col-xxl-4 col-md-6">
-            <div class="card info-card revenue-card">
+          <div class="row">
+              <div class="col-xl-6">
 
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
+                  <div class="card">
+                      <div class="card-body pb-0">
+                          <div class="float-end d-none d-md-inline-block">
+                              <div class="dropdown card-header-dropdown">
+                                  <a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <span class="text-muted">Report<i class="mdi mdi-chevron-down ms-1"></i></span>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-end">
+                                      <a class="dropdown-item" href="#">Export</a>
+                                      <a class="dropdown-item" href="#">Import</a>
+                                      <a class="dropdown-item" href="#">Download Report</a>
+                                  </div>
+                              </div>
+                          </div>
+                          <h4 class="card-title mb-4">Email Sent</h4>
 
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
+                          <div class="text-center pt-3">
+                              <div class="row">
+                                  <div class="col-sm-4 mb-3 mb-sm-0">
+                                      <div class="d-inline-flex">
+                                          <h5 class="me-2">25,117</h5>
+                                          <div class="text-success font-size-12">
+                                              <i class="mdi mdi-menu-up font-size-14"> </i>2.2 %
+                                          </div>
+                                      </div>
+                                      <p class="text-muted text-truncate mb-0">Marketplace</p>
+                                  </div><!-- end col -->
+                                  <div class="col-sm-4 mb-3 mb-sm-0">
+                                      <div class="d-inline-flex">
+                                          <h5 class="me-2">$34,856</h5>
+                                          <div class="text-success font-size-12">
+                                              <i class="mdi mdi-menu-up font-size-14"> </i>1.2 %
+                                          </div>
+                                      </div>
+                                      <p class="text-muted text-truncate mb-0">Last Week</p>
+                                  </div><!-- end col -->
+                                  <div class="col-sm-4">
+                                      <div class="d-inline-flex">
+                                          <h5 class="me-2">$18,225</h5>
+                                          <div class="text-success font-size-12">
+                                              <i class="mdi mdi-menu-up font-size-14"> </i>1.7 %
+                                          </div>
+                                      </div>
+                                      <p class="text-muted text-truncate mb-0">Last Month</p>
+                                  </div><!-- end col -->
+                              </div><!-- end row -->
+                          </div>
+                      </div>
+                      <div class="card-body py-0 px-2">
+                          <div id="area_chart" class="apex-charts" dir="ltr"></div>
+                      </div>
+                  </div><!-- end card -->
               </div>
+              <!-- end col -->
+              <div class="col-xl-6">
+                  <div class="card">
+                      <div class="card-body pb-0">
+                          <div class="float-end d-none d-md-inline-block">
+                              <div class="dropdown">
+                                  <a class="text-reset" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <span class="text-muted">This Years<i class="mdi mdi-chevron-down ms-1"></i></span>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-end">
+                                      <a class="dropdown-item" href="#">Today</a>
+                                      <a class="dropdown-item" href="#">Last Week</a>
+                                      <a class="dropdown-item" href="#">Last Month</a>
+                                      <a class="dropdown-item" href="#">This Year</a>
+                                  </div>
+                              </div>
+                          </div>
+                          <h4 class="card-title mb-4">Revenue</h4>
 
-              <div class="card-body">
-                <h5 class="card-title">Revenue <span>| This Month</span></h5>
+                          <div class="text-center pt-3">
+                              <div class="row">
+                                  <div class="col-sm-4 mb-3 mb-sm-0">
+                                      <div>
+                                          <h5>17,493</h5>
+                                          <p class="text-muted text-truncate mb-0">Marketplace</p>
+                                      </div>
+                                  </div><!-- end col -->
+                                  <div class="col-sm-4 mb-3 mb-sm-0">
+                                      <div>
+                                          <h5>$44,960</h5>
+                                          <p class="text-muted text-truncate mb-0">Last Week</p>
+                                      </div>
+                                  </div><!-- end col -->
+                                  <div class="col-sm-4">
+                                      <div>
+                                          <h5>$29,142</h5>
+                                          <p class="text-muted text-truncate mb-0">Last Month</p>
+                                      </div>
+                                  </div><!-- end col -->
+                              </div><!-- end row -->
+                          </div>
+                      </div>
+                      <div class="card-body py-0 px-2">
+                          <div id="column_line_chart" class="apex-charts" dir="ltr"></div>
+                      </div>
+                  </div><!-- end card -->
+              </div>
+              <!-- end col -->
+          </div>
+          <!-- end row -->
 
-                <div class="d-flex align-items-center">
-                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-currency-dollar"></i>
+          <div class="row">
+              <div class="col-xl-8">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="dropdown float-end">
+                              <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="mdi mdi-dots-vertical"></i>
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-end">
+                                  <!-- item-->
+                                  <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
+                                  <!-- item-->
+                                  <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
+                                  <!-- item-->
+                                  <a href="javascript:void(0);" class="dropdown-item">Profit</a>
+                                  <!-- item-->
+                                  <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                              </div>
+                          </div>
+
+                          <h4 class="card-title mb-4">Latest Transactions</h4>
+
+                          <div class="table-responsive">
+                              <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
+                                  <thead class="table-light">
+                                      <tr>
+                                          <th>Name</th>
+                                          <th>Position</th>
+                                          <th>Status</th>
+                                          <th>Age</th>
+                                          <th>Start date</th>
+                                          <th style="width: 120px;">Salary</th>
+                                      </tr>
+                                  </thead><!-- end thead -->
+                                  <tbody>
+                                      <tr>
+                                          <td><h6 class="mb-0">Charles Casey</h6></td>
+                                          <td>Web Developer</td>
+                                          <td>
+                                              <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
+                                          </td>
+                                          <td>
+                                              23
+                                          </td>
+                                          <td>
+                                              04 Apr, 2021
+                                          </td>
+                                          <td>$42,450</td>
+                                      </tr>
+                                       <!-- end -->
+                                       <tr>
+                                          <td><h6 class="mb-0">Alex Adams</h6></td>
+                                          <td>Python Developer</td>
+                                          <td>
+                                              <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-warning align-middle me-2"></i>Deactive</div>
+                                          </td>
+                                          <td>
+                                              28
+                                          </td>
+                                          <td>
+                                              01 Aug, 2021
+                                          </td>
+                                          <td>$25,060</td>
+                                      </tr>
+                                       <!-- end -->
+                                       <tr>
+                                          <td><h6 class="mb-0">Prezy Kelsey</h6></td>
+                                          <td>Senior Javascript Developer</td>
+                                          <td>
+                                              <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
+                                          </td>
+                                          <td>
+                                              35
+                                          </td>
+                                          <td>
+                                              15 Jun, 2021
+                                          </td>
+                                          <td>$59,350</td>
+                                      </tr>
+                                       <!-- end -->
+                                       <tr>
+                                          <td><h6 class="mb-0">Ruhi Fancher</h6></td>
+                                          <td>React Developer</td>
+                                          <td>
+                                              <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
+                                          </td>
+                                          <td>
+                                              25
+                                          </td>
+                                          <td>
+                                              01 March, 2021
+                                          </td>
+                                          <td>$23,700</td>
+                                      </tr>
+                                       <!-- end -->
+                                       <tr>
+                                          <td><h6 class="mb-0">Juliet Pineda</h6></td>
+                                          <td>Senior Web Designer</td>
+                                          <td>
+                                              <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
+                                          </td>
+                                          <td>
+                                              38
+                                          </td>
+                                          <td>
+                                              01 Jan, 2021
+                                          </td>
+                                          <td>$69,185</td>
+                                      </tr>
+                                       <!-- end -->
+                                       <tr>
+                                          <td><h6 class="mb-0">Den Simpson</h6></td>
+                                          <td>Web Designer</td>
+                                          <td>
+                                              <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-warning align-middle me-2"></i>Deactive</div>
+                                          </td>
+                                          <td>
+                                              21
+                                          </td>
+                                          <td>
+                                              01 Sep, 2021
+                                          </td>
+                                          <td>$37,845</td>
+                                      </tr>
+                                       <!-- end -->
+                                       <tr>
+                                          <td><h6 class="mb-0">Mahek Torres</h6></td>
+                                          <td>Senior Laravel Developer</td>
+                                          <td>
+                                              <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10 text-success align-middle me-2"></i>Active</div>
+                                          </td>
+                                          <td>
+                                              32
+                                          </td>
+                                          <td>
+                                              20 May, 2021
+                                          </td>
+                                          <td>$55,100</td>
+                                      </tr>
+                                       <!-- end -->
+                                  </tbody><!-- end tbody -->
+                              </table> <!-- end table -->
+                          </div>
+                      </div><!-- end card -->
+                  </div><!-- end card -->
+              </div>
+              <!-- end col -->
+              <div class="col-xl-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="float-end">
+                              <select class="form-select shadow-none form-select-sm">
+                                  <option selected>Apr</option>
+                                  <option value="1">Mar</option>
+                                  <option value="2">Feb</option>
+                                  <option value="3">Jan</option>
+                              </select>
+                          </div>
+                          <h4 class="card-title mb-4">Monthly Earnings</h4>
+                          
+                          <div class="row">
+                              <div class="col-4">
+                                  <div class="text-center mt-4">
+                                      <h5>3475</h5>
+                                      <p class="mb-2 text-truncate">Market Place</p>
+                                  </div>
+                              </div>
+                              <!-- end col -->
+                              <div class="col-4">
+                                  <div class="text-center mt-4">
+                                      <h5>458</h5>
+                                      <p class="mb-2 text-truncate">Last Week</p>
+                                  </div>
+                              </div>
+                              <!-- end col -->
+                              <div class="col-4">
+                                  <div class="text-center mt-4">
+                                      <h5>9062</h5>
+                                      <p class="mb-2 text-truncate">Last Month</p>
+                                  </div>
+                              </div>
+                              <!-- end col -->
+                          </div>
+                          <!-- end row -->
+
+                          <div class="mt-4">
+                              <div id="donut-chart" class="apex-charts"></div>
+                          </div>
+                      </div>
+                  </div><!-- end card -->
+              </div><!-- end col -->
+          </div>
+          <!-- end row -->
+      </div>
+      
+  </div>
+  <!-- End Page-content -->
+ 
+  <footer class="footer">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-sm-6">
+                  <script>document.write(new Date().getFullYear())</script> © Upcube.
+              </div>
+              <div class="col-sm-6">
+                  <div class="text-sm-end d-none d-sm-block">
+                      Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
                   </div>
-                  <div class="ps-3">
-                    <h6>$3,264</h6>
-                    <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
-                  </div>
-                </div>
               </div>
-
-            </div>
-          </div><!-- End Revenue Card -->
-
-          <!-- Customers Card -->
-          <div class="col-xxl-4 col-xl-12">
-
-            <div class="card info-card customers-card">
-
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">Customers <span>| This Year</span></h5>
-
-                <div class="d-flex align-items-center">
-                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-people"></i>
-                  </div>
-                  <div class="ps-3">
-                    <h6>1244</h6>
-                    <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div><!-- End Customers Card -->
-
-          <!-- Reports -->
-          <div class="col-12">
-            <div class="card">
-
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">Reports <span>/Today</span></h5>
-
-                <!-- Line Chart -->
-                <div id="reportsChart"></div>
-
-                <script>
-                  document.addEventListener("DOMContentLoaded", () => {
-                    new ApexCharts(document.querySelector("#reportsChart"), {
-                      series: [{
-                        name: 'Sales',
-                        data: [31, 40, 28, 51, 42, 82, 56],
-                      }, {
-                        name: 'Revenue',
-                        data: [11, 32, 45, 32, 34, 52, 41]
-                      }, {
-                        name: 'Customers',
-                        data: [15, 11, 32, 18, 9, 24, 11]
-                      }],
-                      chart: {
-                        height: 350,
-                        type: 'area',
-                        toolbar: {
-                          show: false
-                        },
-                      },
-                      markers: {
-                        size: 4
-                      },
-                      colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                      fill: {
-                        type: "gradient",
-                        gradient: {
-                          shadeIntensity: 1,
-                          opacityFrom: 0.3,
-                          opacityTo: 0.4,
-                          stops: [0, 90, 100]
-                        }
-                      },
-                      dataLabels: {
-                        enabled: false
-                      },
-                      stroke: {
-                        curve: 'smooth',
-                        width: 2
-                      },
-                      xaxis: {
-                        type: 'datetime',
-                        categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-                      },
-                      tooltip: {
-                        x: {
-                          format: 'dd/MM/yy HH:mm'
-                        },
-                      }
-                    }).render();
-                  });
-                </script>
-                <!-- End Line Chart -->
-
-              </div>
-
-            </div>
-          </div><!-- End Reports -->
-
-          <!-- Recent Sales -->
-          <div class="col-12">
-            <div class="card recent-sales overflow-auto">
-
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">Recent Sales <span>| Today</span></h5>
-
-                <table class="table table-borderless datatable">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Customer</th>
-                      <th scope="col">Product</th>
-                      <th scope="col">Price</th>
-                      <th scope="col">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row"><a href="#">#2457</a></th>
-                      <td>Brandon Jacob</td>
-                      <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                      <td>$64</td>
-                      <td><span class="badge bg-success">Approved</span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#">#2147</a></th>
-                      <td>Bridie Kessler</td>
-                      <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                      <td>$47</td>
-                      <td><span class="badge bg-warning">Pending</span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#">#2049</a></th>
-                      <td>Ashleigh Langosh</td>
-                      <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                      <td>$147</td>
-                      <td><span class="badge bg-success">Approved</span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#">#2644</a></th>
-                      <td>Angus Grady</td>
-                      <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                      <td>$67</td>
-                      <td><span class="badge bg-danger">Rejected</span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#">#2644</a></th>
-                      <td>Raheem Lehner</td>
-                      <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                      <td>$165</td>
-                      <td><span class="badge bg-success">Approved</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-
-              </div>
-
-            </div>
-          </div><!-- End Recent Sales -->
-
-          <!-- Top Selling -->
-          <div class="col-12">
-            <div class="card top-selling overflow-auto">
-
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
-
-              <div class="card-body pb-0">
-                <h5 class="card-title">Top Selling <span>| Today</span></h5>
-
-                <table class="table table-borderless">
-                  <thead>
-                    <tr>
-                      <th scope="col">Preview</th>
-                      <th scope="col">Product</th>
-                      <th scope="col">Price</th>
-                      <th scope="col">Sold</th>
-                      <th scope="col">Revenue</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row"><a href="#"><img src="backend/assets/img/product-1.jpg" alt=""></a></th>
-                      <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                      <td>$64</td>
-                      <td class="fw-bold">124</td>
-                      <td>$5,828</td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#"><img src="backend/assets/img/product-2.jpg" alt=""></a></th>
-                      <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                      <td>$46</td>
-                      <td class="fw-bold">98</td>
-                      <td>$4,508</td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#"><img src="backend/assets/img/product-3.jpg" alt=""></a></th>
-                      <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                      <td>$59</td>
-                      <td class="fw-bold">74</td>
-                      <td>$4,366</td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#"><img src="backend/assets/img/product-4.jpg" alt=""></a></th>
-                      <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                      <td>$32</td>
-                      <td class="fw-bold">63</td>
-                      <td>$2,016</td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#"><img src="backend/assets/img/product-5.jpg" alt=""></a></th>
-                      <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                      <td>$79</td>
-                      <td class="fw-bold">41</td>
-                      <td>$3,239</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-              </div>
-
-            </div>
-          </div><!-- End Top Selling -->
-
-        </div>
-      </div><!-- End Left side columns -->
-
-      <!-- Right side columns -->
-      <div class="col-lg-4">
-
-        <!-- Recent Activity -->
-        <div class="card">
-          <div class="filter">
-            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-              <li class="dropdown-header text-start">
-                <h6>Filter</h6>
-              </li>
-
-              <li><a class="dropdown-item" href="#">Today</a></li>
-              <li><a class="dropdown-item" href="#">This Month</a></li>
-              <li><a class="dropdown-item" href="#">This Year</a></li>
-            </ul>
           </div>
-
-          <div class="card-body">
-            <h5 class="card-title">Recent Activity <span>| Today</span></h5>
-
-            <div class="activity">
-
-              <div class="activity-item d-flex">
-                <div class="activite-label">32 min</div>
-                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                <div class="activity-content">
-                  Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
-                </div>
-              </div><!-- End activity item-->
-
-              <div class="activity-item d-flex">
-                <div class="activite-label">56 min</div>
-                <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                <div class="activity-content">
-                  Voluptatem blanditiis blanditiis eveniet
-                </div>
-              </div><!-- End activity item-->
-
-              <div class="activity-item d-flex">
-                <div class="activite-label">2 hrs</div>
-                <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                <div class="activity-content">
-                  Voluptates corrupti molestias voluptatem
-                </div>
-              </div><!-- End activity item-->
-
-              <div class="activity-item d-flex">
-                <div class="activite-label">1 day</div>
-                <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                <div class="activity-content">
-                  Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
-                </div>
-              </div><!-- End activity item-->
-
-              <div class="activity-item d-flex">
-                <div class="activite-label">2 days</div>
-                <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                <div class="activity-content">
-                  Est sit eum reiciendis exercitationem
-                </div>
-              </div><!-- End activity item-->
-
-              <div class="activity-item d-flex">
-                <div class="activite-label">4 weeks</div>
-                <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-                <div class="activity-content">
-                  Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-                </div>
-              </div><!-- End activity item-->
-
-            </div>
-
-          </div>
-        </div><!-- End Recent Activity -->
-
-        <!-- Budget Report -->
-        <div class="card">
-          <div class="filter">
-            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-              <li class="dropdown-header text-start">
-                <h6>Filter</h6>
-              </li>
-
-              <li><a class="dropdown-item" href="#">Today</a></li>
-              <li><a class="dropdown-item" href="#">This Month</a></li>
-              <li><a class="dropdown-item" href="#">This Year</a></li>
-            </ul>
-          </div>
-
-          <div class="card-body pb-0">
-            <h5 class="card-title">Budget Report <span>| This Month</span></h5>
-
-            <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
-
-            <script>
-              document.addEventListener("DOMContentLoaded", () => {
-                var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
-                  legend: {
-                    data: ['Allocated Budget', 'Actual Spending']
-                  },
-                  radar: {
-                    // shape: 'circle',
-                    indicator: [{
-                        name: 'Sales',
-                        max: 6500
-                      },
-                      {
-                        name: 'Administration',
-                        max: 16000
-                      },
-                      {
-                        name: 'Information Technology',
-                        max: 30000
-                      },
-                      {
-                        name: 'Customer Support',
-                        max: 38000
-                      },
-                      {
-                        name: 'Development',
-                        max: 52000
-                      },
-                      {
-                        name: 'Marketing',
-                        max: 25000
-                      }
-                    ]
-                  },
-                  series: [{
-                    name: 'Budget vs spending',
-                    type: 'radar',
-                    data: [{
-                        value: [4200, 3000, 20000, 35000, 50000, 18000],
-                        name: 'Allocated Budget'
-                      },
-                      {
-                        value: [5000, 14000, 28000, 26000, 42000, 21000],
-                        name: 'Actual Spending'
-                      }
-                    ]
-                  }]
-                });
-              });
-            </script>
-
-          </div>
-        </div><!-- End Budget Report -->
-
-        <!-- Website Traffic -->
-        <div class="card">
-          <div class="filter">
-            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-              <li class="dropdown-header text-start">
-                <h6>Filter</h6>
-              </li>
-
-              <li><a class="dropdown-item" href="#">Today</a></li>
-              <li><a class="dropdown-item" href="#">This Month</a></li>
-              <li><a class="dropdown-item" href="#">This Year</a></li>
-            </ul>
-          </div>
-
-          <div class="card-body pb-0">
-            <h5 class="card-title">Website Traffic <span>| Today</span></h5>
-
-            <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
-
-            <script>
-              document.addEventListener("DOMContentLoaded", () => {
-                echarts.init(document.querySelector("#trafficChart")).setOption({
-                  tooltip: {
-                    trigger: 'item'
-                  },
-                  legend: {
-                    top: '5%',
-                    left: 'center'
-                  },
-                  series: [{
-                    name: 'Access From',
-                    type: 'pie',
-                    radius: ['40%', '70%'],
-                    avoidLabelOverlap: false,
-                    label: {
-                      show: false,
-                      position: 'center'
-                    },
-                    emphasis: {
-                      label: {
-                        show: true,
-                        fontSize: '18',
-                        fontWeight: 'bold'
-                      }
-                    },
-                    labelLine: {
-                      show: false
-                    },
-                    data: [{
-                        value: 1048,
-                        name: 'Search Engine'
-                      },
-                      {
-                        value: 735,
-                        name: 'Direct'
-                      },
-                      {
-                        value: 580,
-                        name: 'Email'
-                      },
-                      {
-                        value: 484,
-                        name: 'Union Ads'
-                      },
-                      {
-                        value: 300,
-                        name: 'Video Ads'
-                      }
-                    ]
-                  }]
-                });
-              });
-            </script>
-
-          </div>
-        </div><!-- End Website Traffic -->
-
-        <!-- News & Updates Traffic -->
-        <div class="card">
-          <div class="filter">
-            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-              <li class="dropdown-header text-start">
-                <h6>Filter</h6>
-              </li>
-
-              <li><a class="dropdown-item" href="#">Today</a></li>
-              <li><a class="dropdown-item" href="#">This Month</a></li>
-              <li><a class="dropdown-item" href="#">This Year</a></li>
-            </ul>
-          </div>
-
-          <div class="card-body pb-0">
-            <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
-
-            <div class="news">
-              <div class="post-item clearfix">
-                <img src="backend/assets/img/news-1.jpg" alt="">
-                <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
-              </div>
-
-              <div class="post-item clearfix">
-                <img src="backend/assets/img/news-2.jpg" alt="">
-                <h4><a href="#">Quidem autem et impedit</a></h4>
-                <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
-              </div>
-
-              <div class="post-item clearfix">
-                <img src="backend/assets/img/news-3.jpg" alt="">
-                <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
-              </div>
-
-              <div class="post-item clearfix">
-                <img src="backend/assets/img/news-4.jpg" alt="">
-                <h4><a href="#">Laborum corporis quo dara net para</a></h4>
-                <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
-              </div>
-
-              <div class="post-item clearfix">
-                <img src="backend/assets/img/news-5.jpg" alt="">
-                <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
-                <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
-              </div>
-
-            </div><!-- End sidebar recent posts-->
-
-          </div>
-        </div><!-- End News & Updates -->
-
-      </div><!-- End Right side columns -->
-
-    </div>
-  </section>
+      </div>
+  </footer>
+  
+</div>
 
 @endsection

@@ -51,7 +51,7 @@ class SubSubCategoryController extends Controller
             'alert-type' => 'success'
         );
     
-        return redirect()->route('view.subsubcategory')->with($notification);
+        return redirect()->route('add.subsubcategory')->with($notification);
      }
 
      public function EditSubSubCategory($id){
