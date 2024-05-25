@@ -110,11 +110,16 @@
 
             <div class="dropdown d-inline-block user-dropdown">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="{{ !empty(Auth::user()->profile) ? url('uploads/admin_images/' . Auth::user()->profile) : url('uploads/no_image.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 40px; height: 40px;">
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{{ !empty(Auth::guard('admin')->user()->profile) ? url('uploads/admin_images/' . Auth::guard('admin')->user()->profile) : url('uploads/no_image.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 40px; height: 40px;">
+                @if(Auth::guard('admin')->check())
                     <span class="d-none d-xl-inline-block ms-1">{{ Auth::guard('admin')->user()->name }}</span>
-                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
-                </button>
+                @else
+                    <span class="d-none d-xl-inline-block ms-1">admin</span>
+                @endif
+                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+            </button>
+            
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
                     <a class="dropdown-item" href="{{ route('admin.profile.edit') }}"><i class="ri-user-line align-middle me-1"></i> Profile</a>

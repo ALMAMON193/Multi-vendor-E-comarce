@@ -41,6 +41,21 @@
     <!-- Icons Css -->
     <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 
+     <!-- Bootstrap Tags Input CSS -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet">
+     <style>
+         .bootstrap-tagsinput {
+             width: 100%;
+         }
+         .bootstrap-tagsinput .tag {
+             margin-right: 2px;
+             color: white;
+             background-color: #007bff;
+             padding: 0.2em 0.6em;
+             border-radius: 4px;
+         }
+     </style>
+
 </head>
 
 <body data-topbar="dark">
@@ -108,6 +123,34 @@
 
     <!-- App js -->
     <script src="{{ asset('backend/assets/js/app.js') }}"></script>
+
+     <!-- Bootstrap Tags Input JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+     <script>
+         $(document).ready(function() {
+             $('#product_size_en').tagsinput();
+         });
+ 
+         // Example of form validation (to be integrated with actual form submission logic)
+         function validateForm() {
+             var input = $('#product_size_en').val();
+             if (!input) {
+                 $('#error-message').text('This field is required.');
+                 return false;
+             }
+             $('#error-message').text('');
+             return true;
+         }
+     </script>
+
+       <!-- CKEditor JS -->
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+    <script>
+      
+        CKEDITOR.replace('long_descp_en');
+
+        CKEDITOR.replace('long_descp_hin');
+    </script>
 </body>
 
 </html>

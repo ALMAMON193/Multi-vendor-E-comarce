@@ -6,14 +6,17 @@
         <!-- User details -->
         <div class="user-profile text-center mt-3">
             <div class="">
-                <img src="{{ !empty($adminData->profile) ? url('uploads/admin_images/'.$adminData->profile) : url('uploads/no_image.jpg'
-          
-                )}}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;height:150px;">
+                <img src="{{ !empty(Auth::guard('admin')->user()->profile) ? url('uploads/admin_images/' . Auth::guard('admin')->user()->profile) : url('uploads/no_image.jpg') }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px; height: 150px;">
             </div>
             <div class="mt-3">
-                <h4 class="font-size-16 mb-1">Julia Hudda</h4>
+                @if(Auth::guard('admin')->check())
+                    <h4 class="font-size-16 mb-1">{{ Auth::guard('admin')->user()->name }}</h4>
+                @else
+                    <h4 class="font-size-16 mb-1">Julia Hudda</h4>
+                @endif
                 <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i> Online</span>
             </div>
+            
         </div>
 
         <!--- Sidemenu -->
