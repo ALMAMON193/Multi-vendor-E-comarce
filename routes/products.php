@@ -10,7 +10,7 @@ use App\Http\Controllers\Backend\Product\ProductController;
 
 //product All route
 Route::prefix('product')->group(function(){
-     Route::get('/view', [ProductController::class, 'ProductView'])->name('product.view');
+     Route::get('/view', [ProductController::class, 'ProductView'])->name('product.manage');
      Route::get('/add', [ProductController::class, 'ProductAdd'])->name('product.add');
      Route::post('/store', [ProductController::class, 'ProductStore'])->name('product.store');
       Route::get('/edit/{id}', [ProductController::class, 'ProductEdit'])->name('product.edit');

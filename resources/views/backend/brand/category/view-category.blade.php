@@ -96,10 +96,10 @@
     <script>
         
         document.addEventListener('DOMContentLoaded', function () {
-            const deleteButtons = document.querySelectorAll('.delete-button');
+            const deleteButtons = document.querySelectorAll('.delete-button-category');
             deleteButtons.forEach(button => {
                 button.addEventListener('click', function () {
-                    const brandId = this.getAttribute('data-id');
+                    const categoryId = this.getAttribute('data-id');
                     Swal.fire({
                         title: 'Are you sure?',
                         text: "You won't be able to revert this!",
@@ -111,7 +111,7 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Redirect to the delete route
-                            window.location.href = "{{ route('brand.delete', '') }}/" + brandId;
+                            window.location.href = "{{ route('category.delete', '') }}/" + categoryId;
                         }
                     });
                 });

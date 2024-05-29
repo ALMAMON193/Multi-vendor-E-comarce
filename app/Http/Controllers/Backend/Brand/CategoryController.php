@@ -38,7 +38,7 @@ use App\Http\Controllers\Controller;
             'category_icon' => $request->category_icon,
         ]);
 
-        return redirect()->route('view.category')->with('message', 'Brand Inserted Successfully');
+        return redirect()->route('add.category')->with('message', 'Brand Inserted Successfully');
   }
 
      public function EditCategory($id)

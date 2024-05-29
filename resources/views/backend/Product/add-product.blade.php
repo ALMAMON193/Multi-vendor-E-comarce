@@ -36,13 +36,14 @@
                                 <h4 class="card-title">Add Product</h4>
                                
                                 <form action="{{ route('product.store') }}" method="post" enctype="multipart/form-data">
+                                    @csrf
                                     {{-- First Row Start --}}
                                     <div class="row">
                                         <div class="col-4">
                                             <div class="form-group">
                                                 <label for="brand_id" class="form-label fw-bold">Select Brand <span
                                                         class="text-danger">*</span></label>
-                                                <select id="brand_id" name="brand_id" class="form-select"  required>
+                                                <select id="brand_id" name="brand_id" class="form-select"   parsley-type="brand_id"  required>
                                                     <option value="" selected="" disabled="">Select Brand</option>
                                                     @foreach ($brands as $brand)
                                                         <option value="{{ $brand->id }}">{{ $brand->brand_name_en }}</option>
@@ -72,7 +73,7 @@
                                             <div class="form-group">
                                                 <label for="subcategory_id" class="form-label fw-bold">Select Subcategory <span
                                                         class="text-danger">*</span></label>
-                                                <select id="subcategory_id" name="subcategory_id" class="form-select" required >
+                                                <select id="subcategory_id" name="subcategory_id" class="form-select"  >
                                                     <option value="" selected="" disabled="">Select Subcategory</option>
                                                     {{-- Options will be populated dynamically --}}
                                                 </select>
@@ -91,7 +92,7 @@
                                             <div class="form-group">
                                                 <label for="subsubcategory_id" class="form-label fw-bold">Select Subsubcategory <span
                                                         class="text-danger">*</span></label>
-                                                <select id="subsubcategory_id" name="subsubcategory_id" class="form-select" required >
+                                                <select id="subsubcategory_id" name="subsubcategory_id" class="form-select"  >
                                                     <option value="" selected="" disabled="">Select Subsubcategory</option>
                                                     {{-- Options will be populated dynamically --}}
                                                 </select>
@@ -130,7 +131,7 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <div class="form-group">
-                                                <label for="product_name_en" class="form-label fw-bold">Product Code<span
+                                                <label for="product_code" class="form-label fw-bold">Product Code<span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" id="product_code" name="product_code" class="form-control" required
                                                     >
@@ -170,9 +171,9 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <div class="form-group">
-                                                <label for="product_name_en" class="form-label fw-bold">Product size hindi<span
+                                                <label for="product_size_hin" class="form-label fw-bold">Product size hindi<span
                                                         class="text-danger">*</span></label>
-                                                <input type="text" id="" name="product_code" class="form-control"
+                                                <input type="text" id="" name="product_size_hin" class="form-control"
                                                 data-role="tagsinput" value="XL,XXL,XXXL,M,L" required>
                                                 @error('product_size_hin')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -181,7 +182,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="form-group">
-                                                <label for="product_qty" class="form-label fw-bold">Product Color English<span
+                                                <label for="product_color_en" class="form-label fw-bold">Product Color English<span
                                                         class="text-danger">*</span></label>
                                                 <input type="text" id="product_color_en" name="product_color_en"
                                                     class="form-control" data-role="tagsinput" value="red,green,yeallo" required>
@@ -192,7 +193,7 @@
                                         </div>
                                         <div class="col-4">
                                             <div class="form-group">
-                                                <label for="product_size_en" class="form-label fw-bold">
+                                                <label for="product_color_hin" class="form-label fw-bold">
                                                     product Color Hindi<span class="text-danger">*</span>
                                                 </label>
                                                 <input type="text" name="product_color_hin" class="form-control"data-role="tagsinput" value="red,green,yellow" required>
@@ -213,17 +214,17 @@
                                                  <label for="product_tags_en" class="form-label fw-bold">
                                                      Product Tags (English) <span class="text-danger">*</span>
                                                  </label><br>
-                                                 <input style="width: 58rem;" type="text" id="product_tags_hin"
-                                                     name="product_tags_hin" class="form-control tags-input" data-role="tagsinput"
+                                                 <input style="width: 58rem;" type="text" id="product_tags_en"
+                                                     name="product_tags_en" class="form-control tags-input" data-role="tagsinput"
                                                      value="lorem,vue,php" required>
-                                                 @error('product_tags_hin')
+                                                 @error('product_tags_en')
                                                      <span class="text-danger">{{ $message }}</span>
                                                  @enderror
                                              </div>
                                          </div>
                                          <div class="col-4">
                                              <div class="form-group">
-                                                 <label for="product_tags_en" class="form-label fw-bold">
+                                                 <label for="product_tags_hin" class="form-label fw-bold">
                                                      Product Tags (Hindi) <span class="text-danger">*</span>
                                                  </label><br>
                                                  <input style="width: 58rem;" type="text" id="product_tags_hin"
@@ -274,23 +275,22 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                        
                                         <div class="col-4">
                                             <div class="form-group">
-                                                <label for="product_qty" class="form-label fw-bold">Multi Image<span
-                                                        class="text-danger">*</span></label>
-                                                <input type="file"  name="multi_image[]"
-                                                    class="form-control" multiple="" id="multiImage" required>
+                                                <label for="multi_image" class="form-label fw-bold">Multi Image<span class="text-danger">*</span></label>
+                                                <input type="file" name="multi_image[]" class="form-control" multiple="" id="multiImage" required>
                                                 @error('multi_image')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                                 <div>
                                                     <div class="row" id="preview_img">
-
+                                                        <!-- Image previews will be displayed here -->
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                  
+                                                                          
                                     </div>
                                     {{-- 7th Row End --}}
                                    
@@ -300,7 +300,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="product_tags_en" class="form-label fw-bold">Short Description (English)
+                                                <label for="short_descp_en" class="form-label fw-bold">Short Description (English)
                                                     <span class="text-danger">*</span></label>
                                                 <textarea  name="short_descp_en" class="form-control" required></textarea>
                                                 @error('short_descp_en')
@@ -357,7 +357,7 @@
                                     <div class="row">
                                       <div class="col-md-6">
                                           <div class="form-group">
-                                            <input class="form-check-input" type="checkbox" id="hot_deals" name="hot_deals" required>
+                                            <input class="form-check-input" type="checkbox" id="hot_deals" name="hot_deals" value="1">
                                             <label class="form-check-label" for="hot_deals">
                                                 Hot Deal
                                             </label>
@@ -366,7 +366,7 @@
                                               @enderror
                                           </div>
                                           <div class="form-group">
-                                            <input class="form-check-input" type="checkbox" id="featured" name="featured">
+                                            <input class="form-check-input" type="checkbox" id="featured" name="featured" value="1">
                                             <label class="form-check-label" for="featured">
                                               Featured
                                             </label>
@@ -377,7 +377,7 @@
                                       </div>
                                       <div class="col-md-6">
                                           <div class="form-group">
-                                            <input class="form-check-input" type="checkbox" id="special_offer" name="special_offer" required>
+                                            <input class="form-check-input" type="checkbox" id="special_offer" name="special_offer" value="1">
                                             <label class="form-check-label" for="special_offer">
                                               Special offer
                                             </label>
@@ -386,7 +386,7 @@
                                               @enderror
                                           </div>
                                           <div class="form-group">
-                                            <input class="form-check-input" type="checkbox" id="special_deals" name="special_deals" required>
+                                            <input class="form-check-input" type="checkbox" id="special_deals" name="special_deals" value="1">
                                             <label class="form-check-label" for="special_deals">
                                               special deals
                                             </label>
@@ -400,7 +400,7 @@
                                   
                                   <button class="btn btn-success" type="submit">Add product</button>
                               </div>
-                            </form>
+                                </form>
                                    
                             </div>
                         </div>
@@ -498,34 +498,30 @@
         }
     }
 </script>
+<script>
+    document.getElementById('multiImage').addEventListener('change', function(event) {
+        const previewContainer = document.getElementById('preview_img');
+        previewContainer.innerHTML = ''; // Clear any existing previews
 
-<script>  $(document).ready(function(){
-    $('#multiImage').on('change', function(){ //on file input change
-       if (window.File && window.FileReader && window.FileList && window.Blob) //check File API supported browser
-       {
-           var data = $(this)[0].files; //this file data
-            
-           $.each(data, function(index, file){ //loop though each file
-               if(/(\.|\/)(gif|jpe?g|png)$/i.test(file.type)){ //check supported file type
-                   var fRead = new FileReader(); //new filereader
-                   fRead.onload = (function(file){ //trigger function on successful read
-                   return function(e) {
-                       var img = $('<img/>').addClass('thumb').attr('src', e.target.result) .width(80)
-                   .height(80); //create image element 
-                       $('#preview_img').append(img); //append image to output element
-                   };
-                   })(file);
-                   fRead.readAsDataURL(file); //URL representing the file's data.
-               }
-           });
-            
-       }else{
-           alert("Your browser doesn't support File API!"); //if File API is absent
-       }
+        const files = event.target.files;
+        if (files) {
+            Array.from(files).forEach(file => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.style.maxWidth = '100px'; // Set the desired width
+                        img.style.margin = '10px'; // Add some margin
+                        previewContainer.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
     });
-   });
-    
- </script>
+</script>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
